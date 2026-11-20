@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Athletes For Trauma</title>
+<link rel="stylesheet" href="https://use.typekit.net/scq8iav.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
+<style>
+/* Layout: obama.org's structure and typography (condensed bold sans headlines in sentence case, serif text,
+   square corners, thick section rules, ruled story grid), coloured with the April 2026 AFT deck: pink leads, yellow gradient blocks. */
+:root{
+  --bg:#ffffff; --fg:#000000; --mute:#555555; --line:#d9d9d9; --soft:#f3f3ee;
+  --pink:#f1592a; --pink-ink:#c2410c; --gold:#fec40c; --orange:#f3a538;
+  --grad:linear-gradient(115deg,#ffeb68 0%,#fed438 42%,#f3a538 100%);
+  --head:"gotham-condensed","Barlow Condensed","Arial Narrow",sans-serif;
+  --sp:clamp(48px,6vw,80px);
+  --serif:"gotham-condensed","Barlow Condensed","Arial Narrow",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e0d0e; --fg:#f5f2f3; --mute:#b3aaae; --line:#333; --soft:#1a1819; --pink-ink:#f78dc2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e0d0e; --fg:#f5f2f3; --mute:#b3aaae; --line:#333; --soft:#1a1819; --pink-ink:#f78dc2; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:18px}
+body{background:var(--bg);color:var(--fg);font-family:var(--serif);font-weight:500;font-size:24px;line-height:1.22;letter-spacing:0}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+p{margin:0;max-width:62ch}
+h1,h2,h3{margin:0;font-family:var(--head);font-weight:700;line-height:.9;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2.4rem,4.6vw,3.4rem)}
+h3{font-size:1.6rem;line-height:.95}
+img{display:block;width:100%;height:100%;object-fit:cover;border-radius:2px}
+.eyebrow{font-family:var(--head);font-weight:600;font-size:1rem;color:var(--pink-ink)}
+.tags{font-family:var(--head);font-weight:500;font-size:1.1rem;color:var(--mute)}
+.more{font-family:var(--head);font-weight:700;font-size:1.1rem;text-decoration:none;display:inline-flex;gap:8px;align-items:center;width:max-content}
+.more::after{content:"→";transition:transform .15s}
+.more:hover::after{transform:translateX(4px)}
+.more:hover{color:var(--pink-ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 1.15rem var(--head);text-decoration:none;padding:12px 24px;border-radius:2px;background:var(--pink);color:#000;border:0;cursor:pointer;transition:background .15s}
+.btn:hover{background:#000;color:#fff}
+.btn.dark{background:#000;color:#fff}
+.btn.dark:hover{background:var(--pink);color:#000}
+.btn.out{background:transparent;color:inherit;border:1px solid currentColor;width:100%}
+.btn.out:hover{background:var(--pink);color:#000;border-color:var(--pink)}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+
+/* announcement + header */
+.announce{background:var(--pink);color:#000;margin-bottom:calc(var(--sp) / 2)}
+.announce .wrap{padding-block:22px !important}
+.announce .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-block:14px}
+.announce b{font-family:var(--head);font-weight:700;font-size:1.35rem;display:block}
+.announce span{font-size:1.2rem}
+.announce a{font-family:var(--head);font-weight:700;font-size:1.1rem;text-decoration:none;white-space:nowrap}
+.announce a::after{content:" ↗"}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);box-shadow:0 1px 0 var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo .mark{width:46px;height:46px;border-radius:50%;overflow:hidden;background:#fff;flex:none}
+.logo .mark img{object-fit:contain;border-radius:0}
+.logo b{font-family:var(--head);font-weight:700;font-size:1.55rem;letter-spacing:-.01em}
+nav.main{display:flex;gap:clamp(14px,1.6vw,24px);align-items:center}
+nav.main a.n{text-decoration:none;font-family:var(--head);font-weight:600;font-size:1.2rem}
+nav.main a.n:hover{color:var(--pink-ink)}
+@media (max-width:1140px){nav.main a.n{display:none}}
+
+/* hero: solid deck-gradient block, huge headline, photo below */
+.hero{padding:0}
+.heroblock{background:var(--grad);color:#000}
+.heroblock .wrap{padding-block:clamp(22px,3vw,36px) clamp(16px,2vw,22px);display:grid;gap:12px}
+.hero h1{font-size:clamp(2.8rem,6.5vw,5.6rem);line-height:.9}
+.hero h1 .l1{color:var(--pink);display:block}
+.hero .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.hero .row b{font-family:var(--head);font-weight:700;font-size:1.3rem}
+.arrow{width:46px;height:46px;display:grid;place-items:center;background:#000;color:#fff;text-decoration:none;font-size:1.3rem;border-radius:2px}
+.arrow:hover{background:var(--pink);color:#000}
+.heromedia{position:relative;aspect-ratio:16/8;max-width:100%;background:#111}
+.heromedia img{border-radius:0;object-position:50% 12%}
+@media (max-width:700px){.heromedia{aspect-ratio:4/3}}
+.play{position:absolute;left:max(20px,env(safe-area-inset-left,0px));bottom:20px;display:flex;align-items:center;gap:12px;background:#000;color:#fff;text-decoration:none;font:700 1.15rem var(--head);padding:8px 18px 8px 8px;border-radius:2px}
+.play i{width:38px;height:38px;background:var(--pink);display:grid;place-items:center;flex:none;border-radius:2px}
+.play i::before{content:"";border-left:12px solid #000;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.play:hover i{background:#fff}
+.intro{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:end;padding-block:28px 0}
+.intro > *{min-width:0}
+.intro p{font-size:1.25rem;line-height:1.25}
+.intro .ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:760px){.intro{grid-template-columns:1fr}.intro .ctas{justify-content:flex-start}}
+
+/* sections open with a thick rule, obama.org style, in deck pink */
+section{padding-block:var(--sp) 0}
+.rule{padding-top:24px;position:relative}
+.rule::before{content:"";position:absolute;top:0;height:4px;left:max(20px,env(safe-area-inset-left,0px));right:max(20px,env(safe-area-inset-right,0px));background:var(--fg)}
+.rule.pink::before{background:var(--pink)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,34px)}
+.head > div{display:grid;gap:10px}
+.head p{color:var(--mute)}
+
+/* who / what modules */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.mod{display:flex;flex-direction:column;gap:12px}
+.mod .ph{aspect-ratio:16/10;overflow:hidden}
+.mod h3{font-size:1.75rem}
+.mod .btn{margin-top:auto}
+.mod p{margin-bottom:6px}
+@media (max-width:760px){.duo{grid-template-columns:1fr}}
+
+/* promo blocks */
+.promos{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.promo{padding:clamp(32px,4vw,52px) clamp(24px,3vw,40px);display:grid;gap:14px;align-content:space-between;min-height:260px;color:#000}
+.promo.p{padding-left:max(20px,calc((100% * 2 - 1240px) / 2 + 20px))}
+.promo.y{padding-right:max(20px,calc((100% * 2 - 1240px) / 2 + 20px))}
+.promo.p{background:var(--pink)}
+.promo.y{background:var(--grad)}
+.promo + .promo{border-left:1px solid rgba(0,0,0,.18)}
+.promo h3{font-size:clamp(1.9rem,3vw,2.5rem)}
+.promo .eyebrow{color:#000}
+.promo .more{color:#000}
+@media (max-width:760px){.promos{grid-template-columns:1fr}.promo + .promo{border-left:0}.promo.p,.promo.y{padding-inline:20px}}
+
+/* mission with inline images */
+.mission p.big{font-family:var(--head);font-weight:500;font-size:clamp(1.7rem,3.3vw,3.05rem);line-height:1.02;max-width:none;letter-spacing:-.015em;text-align:left;text-wrap:pretty}
+@media (min-width:900px){.mission p.big{text-align:justify;text-align-last:left}}
+.mission .ii{display:inline-block;width:1.55em;height:1em;overflow:hidden;vertical-align:-.12em;margin:0 .05em;border-radius:2px}
+.mission .hl{color:var(--pink-ink)}
+.mission .spark{color:var(--orange)}
+.mission .nw{white-space:nowrap}
+.mission .mbox{background:var(--pink);color:#000;padding-block:clamp(32px,4vw,52px);position:relative;overflow:hidden}
+.mission .mbox .eyebrow{color:#000}
+.mission .mbox .hl{color:#fff}
+.mission .mbox .src{color:#2a0a1b}
+.mission .mbox .head{margin-bottom:12px}
+.mission .mbox .src{margin-top:14px}
+
+.mission .src{margin-top:20px;color:var(--mute)}
+
+/* stories grid with thin column rules */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,26px) clamp(12px,1.6vw,20px)}
+.card{display:flex;flex-direction:column;gap:10px;text-decoration:none;padding:0;position:relative}
+.card .more{margin-top:auto}
+
+.card .ph{aspect-ratio:3/2;overflow:hidden;margin-bottom:6px;border-radius:2px}
+.card h3{font-size:1.5rem}
+.card p{font-size:1.2rem}
+.card:hover h3{color:var(--pink-ink)}
+@media (max-width:900px){.cards{grid-template-columns:1fr}.card,.card:first-child,.card:last-child{padding:0 0 24px}.cards{row-gap:28px}}
+
+/* Laura + video */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.split > *{min-width:0}
+.split .ph{aspect-ratio:4/5;overflow:hidden}
+.split .copy{display:grid;gap:16px}
+.split .copy p.lead{font-size:1.25rem;line-height:1.25}
+.video{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.video > *{min-width:0}
+.video .ph{position:relative;aspect-ratio:16/9;overflow:hidden}
+.video .play{left:14px;bottom:14px}
+@media (max-width:820px){.split,.video{grid-template-columns:1fr}.split .ph{aspect-ratio:3/2}}
+
+/* testimonials on deck duotone band */
+.band{position:relative;color:#000;overflow:hidden;margin-top:var(--sp);padding-block:clamp(32px,4vw,52px)}
+.band .bg{position:absolute;inset:0}
+.band .bg img{border-radius:0}
+.band .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,235,104,.95) 0%,rgba(254,212,56,.86) 48%,rgba(245,103,175,.22) 100%)}
+.band .wrap{position:relative}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:26px;background:#fff;color:#000}
+.quotes figure{margin:0;padding:24px;display:grid;gap:12px;align-content:space-between}
+.quotes figure + figure{border-left:1px solid #ddd}
+.quotes blockquote{margin:0;font-size:1.3rem;line-height:1.22}
+.quotes figcaption{font:700 1.15rem var(--head);color:#c93683}
+@media (max-width:820px){.quotes{grid-template-columns:1fr}.quotes figure + figure{border-left:0;border-top:1px solid #ddd}}
+
+/* partners */
+.plogos{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.plogos a{min-height:96px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;place-items:center;text-align:center;padding:14px;text-decoration:none;font:700 1.2rem var(--head)}
+.plogos a:hover{background:var(--pink);color:#000}
+@media (max-width:760px){.plogos{grid-template-columns:1fr 1fr}}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,260px));gap:32px}
+.person{display:grid;gap:6px;align-content:start}
+.person .ph{height:320px;display:flex;align-items:flex-end;justify-content:flex-start;overflow:hidden}
+.person .ph img{width:auto;max-width:100%;height:auto;max-height:100%;object-fit:contain}
+.person b{font:700 1.3rem var(--head)}
+.person small{color:var(--mute);font-size:.9rem;line-height:1.2}
+
+@media (max-width:620px){.team{grid-template-columns:1fr 1fr;gap:20px}.person .ph{height:230px}}
+
+/* newsletter panel, underline fields */
+.insiderbg{background:var(--soft)}
+.insider{padding-block:clamp(32px,4vw,52px);display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end}
+.insider > *{min-width:0}
+.insider p{margin-top:10px}
+.insider form{display:grid;gap:18px}
+.field label{display:block;font:700 1.15rem var(--head)}
+.field input{width:100%;font:inherit;padding:8px 0;border:0;border-bottom:1px solid var(--fg);background:transparent;color:var(--fg)}
+.field input:focus{outline:none;border-bottom:2px solid var(--pink)}
+.insider .btn{justify-self:end;background:transparent;color:inherit;border:1px solid currentColor}
+.insider .btn:hover{background:var(--pink);color:#000;border-color:var(--pink)}
+.status{color:var(--pink-ink);font-size:1.1rem}
+@media (max-width:820px){.insider{grid-template-columns:1fr}}
+
+/* donate block */
+.donate{display:grid;grid-template-columns:1fr 1fr;background:var(--pink);color:#000;margin-top:0}
+.donate > *{min-width:0}
+.donate .txt{padding:clamp(32px,4vw,52px) clamp(28px,5vw,64px);display:grid;gap:16px;align-content:center}
+.donate h2{font-size:clamp(3rem,6vw,5rem);line-height:.92;color:#fff}
+.donate .ph{min-height:360px}
+.donate .ph img{border-radius:0}
+@media (max-width:820px){.donate{grid-template-columns:1fr}}
+
+/* contact */
+.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.visit div{display:grid;gap:4px;align-content:start}
+.visit small{font:700 1.2rem var(--head)}
+.copybtn{background:none;border:0;color:var(--pink-ink);font:700 1rem var(--head);cursor:pointer;padding:0 0 0 8px}
+@media (max-width:760px){.visit{grid-template-columns:1fr}}
+
+footer{margin-top:var(--sp);background:var(--grad);color:#000;padding-block:52px 28px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px}
+.fcols > *{min-width:0}
+.fcols h4{margin:0 0 12px;font:700 1.3rem var(--head);color:#c93683}
+.fcols ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fcols ul a{text-decoration:none;color:#222}
+.fcols ul a:hover{color:#c93683}
+footer .logo b{color:#000}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:36px;padding-top:18px;border-top:1px solid rgba(0,0,0,.25);font-size:.88rem;color:#333}
+@media (max-width:820px){.fcols{grid-template-columns:1fr 1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding-block:12px}
+.chips button{flex:1 1 auto;font:700 1.05rem var(--head);padding:11px 12px;border-radius:2px;border:0;background:var(--grad);color:#000;cursor:pointer;transition:background .15s,color .15s}
+.chips button.pk{background:var(--pink)}
+.chips button:hover,.chips button.pk:hover{background:#000;color:#fff}
+.chips button[aria-pressed="true"]{box-shadow:inset 0 0 0 3px #000}
+.chips button:first-child[aria-pressed="true"]{box-shadow:none}
+.pcards{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,2vw,26px) clamp(12px,1.6vw,20px)}
+.pcard{display:grid;gap:4px;align-content:start}
+.pcard h3{font-size:1.5rem}
+.pcard p{color:var(--mute)}
+.pcard .ph{aspect-ratio:16/10;overflow:hidden;margin-bottom:8px;border-radius:2px}
+.pcard[hidden]{display:none}
+.ph-empty{background:var(--grad);display:grid;place-content:center;text-align:center;color:#000}
+.ph-empty span{font:700 2rem var(--head);color:#c93683}
+.ph-empty small{font:500 .9rem var(--head)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.stat{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px;display:grid;gap:8px;align-content:start;grid-template-rows:auto auto 1fr auto}
+.stat .lbl{font:600 .9rem var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.stat b{font:700 clamp(2.6rem,4.6vw,3.6rem)/1 var(--head);color:var(--pink-ink);font-variant-numeric:tabular-nums}
+.stat .src{font-size:1.05rem;color:var(--mute);border-top:1px solid var(--line);padding-top:10px}
+.elist{border-top:2px solid var(--fg)}
+.erow{display:grid;grid-template-columns:170px 1fr 220px;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.erow > *{min-width:0}
+.erow .d{font:700 1.25rem var(--head);color:var(--pink-ink)}
+.erow h3{font-size:1.45rem}
+.erow .w{color:var(--mute)}
+.pgroups{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pgroups ul{list-style:none;margin:10px 0 0;padding:0;border-top:2px solid var(--fg)}
+.pgroups li{padding:9px 0;border-bottom:1px solid var(--line)}
+@media (max-width:1000px){.pcards{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.pcards{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.pcards{grid-template-columns:1fr}}
+
+.nbox{background:var(--pink);color:#000;padding-block:clamp(32px,4vw,52px)}
+.nbox .head p{color:#000;opacity:.8}
+.nbox .stats{border-color:rgba(0,0,0,.25)}
+.nbox .stat{border-color:rgba(0,0,0,.25)}
+.nbox .stat .lbl,.nbox .stat .src{color:#3a0d24}
+.nbox .stat b{color:#000}
+.nbox .stat .src{border-top-color:rgba(0,0,0,.25)}
+@media (max-width:900px){.stats{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.stats{grid-template-columns:1fr}}
+@media (max-width:760px){.erow{grid-template-columns:1fr;gap:4px}}
+@media (max-width:860px){.pgroups{grid-template-columns:1fr}}
+.chips{margin-bottom:16px}
+nav.main a.ig{color:var(--pink-ink)}
+.logofull{height:76px;width:auto;object-fit:contain;border-radius:0}
+footer .logofull{height:44px}
+@media (max-width:560px){.logofull{height:38px}.bar{gap:10px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header .logo{background:#fff;padding:6px 10px;border-radius:2px}}
+:root[data-theme="dark"] header .logo{background:#fff;padding:6px 10px;border-radius:2px}
+
+/* features: full-bleed cover wall, three rows of three */
+
+.fwall{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,18px)}
+.fcover{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;background:var(--bg);text-decoration:none;color:#fff;border-radius:2px;isolation:isolate}
+.fcover img{border-radius:0;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .3s}
+.fcover:hover img,.fcover:focus-visible img{transform:scale(1.035)}
+.fcover .cap{position:absolute;inset:auto 0 0 0;display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:40px 12px 12px;background:linear-gradient(transparent,rgba(0,0,0,.78));opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+.fcover:hover .cap,.fcover:focus-visible .cap{opacity:1;transform:none}
+.fcover .cap b{font:700 1.15rem/1 var(--head)}
+.fcover .cap small{display:block;font:500 .85rem/1.1 var(--head);color:#ffd6ea;margin-top:3px}
+.fcover .cap i{font-style:normal;width:30px;height:30px;flex:none;display:grid;place-items:center;background:var(--pink);color:#000;font:700 1.3rem var(--head);border-radius:2px}
+.fcover:focus-visible{outline-offset:-6px}
+@media (hover:none){.fcover .cap{opacity:1;transform:none}}
+@media (max-width:1000px){.fwall{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:760px){.fwall{grid-template-columns:repeat(3,1fr);gap:8px}.fcover .cap{display:none}}
+@media (max-width:440px){.fwall{grid-template-columns:1fr 1fr}}
+
+/* single feature page */
+#fview{padding-block:clamp(28px,4vw,48px) clamp(56px,7vw,88px)}
+.fback{font:700 1.1rem var(--head);text-decoration:none;display:inline-flex;gap:8px;margin-bottom:22px}
+.fback:hover{color:var(--pink-ink)}
+.fpage{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,4vw,56px);align-items:start}
+.fpage .fc{position:sticky;top:120px;aspect-ratio:3/4;overflow:hidden}
+.fpage .fc img{border-radius:0}
+.fbody{display:grid;gap:18px;border-top:4px solid var(--pink);padding-top:20px}
+.fbody h1{font-size:clamp(3rem,6vw,5.2rem);line-height:.9}
+.fbody .dek{font:700 clamp(1.5rem,2.4vw,2rem)/1.05 var(--head);color:var(--pink-ink)}
+.fbody .role{font:600 1.15rem var(--head);color:var(--mute)}
+.fbody blockquote{margin:6px 0;padding:6px 0 6px 20px;border-left:6px solid var(--gold);font-size:1.3rem;line-height:1.2;font-style:italic}
+.fslot{display:grid;place-items:center;text-align:center;gap:6px;aspect-ratio:16/9;background:var(--soft);border:1px dashed #bbb;color:var(--mute);font:600 1.15rem var(--head)}
+.fslot small{font:400 .9rem var(--serif)}
+.fstory{display:grid;gap:12px}
+.fstory p.ph{color:var(--mute);font-style:italic}
+.fnav{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:18px;margin-top:8px;flex-wrap:wrap}
+.fnav a{text-decoration:none;font:700 1.15rem var(--head)}
+.fnav a:hover{color:var(--pink-ink)}
+.fnav small{display:block;font:500 .9rem var(--head);color:var(--mute)}
+@media (max-width:820px){.fpage{grid-template-columns:1fr}.fpage .fc{position:static;max-width:520px}}
+
+section[id]{scroll-margin-top:100px}
+.subpage section{padding-top:20px}
+.vwall{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px)}
+.vcard{display:grid;gap:10px;text-decoration:none}
+.vcard .ph{position:relative;aspect-ratio:16/9;overflow:hidden;background:#111;border-radius:2px}
+.vcard .ph img{border-radius:0;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.vcard:hover .ph img{transform:scale(1.035)}
+.vcard .pl{position:absolute;left:12px;bottom:12px;width:44px;height:44px;background:var(--pink);display:grid;place-items:center;border-radius:2px;transition:background .15s}
+.vcard .pl::before{content:"";border-left:14px solid #000;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.vcard:hover .pl{background:#fff}
+.vcard b{font:700 1.35rem/.95 var(--head)}
+.vcard small{font:500 1rem var(--head);color:var(--mute);display:block;margin-top:2px}
+.vplayer{aspect-ratio:16/9;position:relative;overflow:hidden;background:#111}
+.vplayer img{border-radius:0;opacity:.55}
+.vplayer span{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:600 1.2rem var(--head);text-align:center}
+@media (max-width:860px){.vwall{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.vwall{grid-template-columns:1fr}}
+
+.zcta{display:flex;margin-top:24px}
+nav.main .btn{white-space:nowrap;background:var(--grad);color:#000}
+nav.main .btn:hover{background:#000;color:#fff}
+@media (max-width:560px){nav.main .btn{padding:10px 14px;font-size:1rem}}
+.bar{display:grid;grid-template-columns:1fr auto 1fr;justify-content:normal}
+.bar>.logo{justify-self:start}
+.bar>nav.main{justify-self:center}
+header .logomark{height:64px;width:auto;object-fit:contain;border-radius:0}
+.wordmark{margin-left:auto;display:block;flex:none}
+.wordmark img{height:44px;width:auto;object-fit:contain;border-radius:0}
+@media (max-width:1280px){.wordmark img{height:34px}}
+@media (max-width:560px){header .logomark{height:44px}.wordmark img{height:26px}nav.main .btn{display:none}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .wordmark{background:#fff;padding:6px 10px;border-radius:2px}}
+.donate .dlead{font:700 clamp(1.5rem,2.2vw,1.9rem)/1.02 var(--head);color:#fff}
+.dbox{background:#fff;padding:clamp(18px,2.4vw,28px);display:grid;gap:14px;border-radius:2px;margin-top:6px}
+.dfreq{display:grid;grid-template-columns:1fr 1fr;border:2px solid #000;border-radius:2px;overflow:hidden}
+.dfreq button{font:700 1.05rem var(--head);padding:10px;border:0;background:#fff;color:#000;cursor:pointer}
+.dfreq button[aria-pressed="true"]{background:#000;color:#fff}
+.damts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.damts button{font:700 1.3rem var(--head);padding:12px 6px;border:2px solid #000;background:#fff;color:#000;border-radius:2px;cursor:pointer}
+.damts button[aria-pressed="true"]{background:var(--pink);border-color:var(--pink)}
+.damts button:hover{border-color:var(--pink)}
+.dgo{width:100%}
+.dnote{font-size:1.1rem;color:#222;max-width:none}
+.dnote b{color:#fff;font-size:1.25em}
+.dquote{margin:6px 0;padding:6px 0 6px 20px;border-left:6px solid #fff;font:700 clamp(2rem,3.2vw,2.8rem)/1 var(--head);color:#fff}
+.dquote cite{display:block;margin-top:10px;font:600 1.15rem var(--head);font-style:normal;color:#000}
+.donate .txt .btn{justify-self:start}
+/* donate page */
+.gv-hero{padding-top:12px}
+.gv-hero h1{font-size:clamp(3rem,6.5vw,5.6rem);line-height:.9;margin:8px 0 18px}
+.gv-lead{font-size:1.35rem;max-width:44ch}
+.gv-ctas{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 clamp(28px,4vw,44px)}
+.gv-photo{aspect-ratio:16/7;overflow:hidden}
+.gv-photo img{border-radius:0}
+.gv-two{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,4vw,56px);align-items:start}
+.gv-copy{display:grid;gap:14px}
+.gv-copy p{max-width:none}
+.gv-fine{color:var(--mute);font-size:1rem}
+.gv-stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--pink);padding:clamp(28px,4vw,48px) 0}
+.gv-stats div{display:grid;gap:6px;padding:0 clamp(20px,3vw,40px);border-left:1px solid rgba(0,0,0,.25)}
+.gv-stats div:first-child{border-left:0}
+.gv-stats b{font:700 clamp(3.4rem,7vw,6rem)/.9 var(--head)}
+.gv-stats span{font-size:1.15rem}
+.gv-quote{position:relative;margin-top:var(--sp);padding:clamp(56px,8vw,110px) 0;color:#000;overflow:hidden}
+.gv-qimg{position:absolute;inset:0}
+.gv-qimg img{border-radius:0}
+.gv-qimg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,235,104,.96),rgba(254,212,56,.88) 55%,rgba(245,103,175,.35))}
+.gv-quote .wrap{position:relative}
+.gv-quote blockquote{margin:0;font:700 clamp(2rem,4vw,3.4rem)/1 var(--head);max-width:26ch}
+.gv-quote cite{display:block;margin-top:18px;font:600 1.2rem var(--head);font-style:normal;color:var(--pink-ink)}
+.gv-used{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.gv-used h2{margin-bottom:14px}
+.gv-list{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--line)}
+.gv-list li{display:grid;gap:2px;padding:14px 0;border-bottom:1px solid var(--line)}
+.gv-list b{font:700 1.4rem var(--head)}
+.gv-fig{margin:0;display:grid;gap:8px}
+.gv-fig img{aspect-ratio:4/5;border-radius:2px}
+.gv-fig figcaption{color:var(--mute);font-size:1rem}
+.gv-monthly{background:#9fdcf2;padding-block:clamp(32px,4vw,52px)}
+.gv-monthly .btn{justify-self:start}
+.gv-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px)}
+.gv-card{display:flex;flex-direction:column;gap:8px;text-decoration:none}
+.gv-card .ph{aspect-ratio:16/10;overflow:hidden;border-radius:2px;margin-bottom:6px}
+.gv-card b{font:700 1.6rem/1 var(--head)}
+.gv-card .more,.gv-card .btn{margin-top:auto}
+.gv-card.gv-pink{background:var(--pink);padding:clamp(22px,3vw,32px);justify-content:flex-start}
+.gv-card.gv-pink b{font-size:2.2rem}
+.gv-card.gv-pink .btn{align-self:flex-start}
+@media (max-width:820px){.gv-two,.gv-used,.gv-cards{grid-template-columns:1fr}.gv-stats{grid-template-columns:1fr;gap:20px}.gv-stats div{border-left:0}.gv-photo{aspect-ratio:4/3}}
+.htop{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.spirit{max-width:none;margin:0;text-align:right;white-space:nowrap;font:700 clamp(2.1rem,4.4vw,4rem)/.9 var(--head);letter-spacing:-.01em;color:#000}
+.spirit span{color:#fff}
+@media (max-width:900px){.spirit{text-align:left;white-space:normal}}
+.heroblock .wrap{position:relative}
+@media (min-width:901px){.heroblock .spirit{position:absolute;right:max(20px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}}
+.tm{font:700 .34em var(--head);color:#000;vertical-align:top;position:relative;top:.12em;margin-left:.06em;letter-spacing:.02em}
+footer .tm{font-size:.55em;top:.1em}
+/* press list */
+.plist{border-top:1px solid var(--fg)}
+.prow{display:grid;grid-template-columns:220px 1fr auto;gap:24px;align-items:baseline;padding-block:18px;border-bottom:1px solid var(--line);text-decoration:none}
+.prow .o{font:700 1.25rem var(--head);color:var(--pink-ink)}
+.prow h3{font-size:1.45rem}
+.prow .go{font:700 1.3rem var(--head)}
+.prow:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+@media (max-width:700px){.prow{grid-template-columns:1fr;gap:4px}.prow .go{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fcover img{transition:none}.btn,.more::after{transition:none}}
+
+/* Brand banner: Artists + Athletes for Trauma */
+.brandbar{background:var(--bg)}
+.bb-logos{display:flex;justify-content:center;align-items:center;gap:20px;padding-block:clamp(22px,3.4vw,44px)}
+.bb-word{display:block;text-decoration:none}
+.bb-word img{display:block;height:clamp(30px,3.75vw,48px);width:auto;max-width:100%;object-fit:contain;border-radius:0}
+.bb-art{justify-self:end}
+.bb-ath{justify-self:start}
+.bb-mark{height:clamp(64px,7vw,92px);width:auto;border-radius:0}
+.bb-tag{background:var(--grad);color:#000}
+.bb-tag p{width:100%;max-width:none;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 22px;padding-block:clamp(6px,.7vw,9px);margin:0;font-family:var(--head);font-weight:700;text-align:center}
+.bb-t1{font-size:clamp(1.5rem,3.2vw,2.6rem);text-transform:uppercase;letter-spacing:.06em}
+.bb-t2{font-size:clamp(1.25rem,2.4vw,1.9rem)}
+.bb-t2 em{font-style:normal;color:#fff}
+.bb-t2 sup{font-size:.42em;color:#000;vertical-align:super;margin-left:1px}
+.bb-dot{width:7px;height:7px;border-radius:50%;background:#000}
+@media (max-width:980px){
+  .bb-logos{flex-direction:column;gap:10px}
+  .bb-mark{order:-1;height:72px}
+  .bb-art,.bb-ath{justify-self:center}
+  .bb-word img{height:clamp(28px,4.4vw,40px)}
+  .bb-dot{display:none}
+  .bb-tag p{flex-direction:column}
+}
+
+.mission .mjoin{margin-top:clamp(20px,2.4vw,28px);padding-top:clamp(18px,2.2vw,24px);border-top:2px solid #fff;display:flex;gap:14px 28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.mission .mjoin b{font-family:var(--head);font-weight:700;font-size:clamp(1.35rem,2vw,1.7rem);display:block;line-height:1.05}
+.mission .mjoin span{display:block;font-size:1.2rem;margin-top:4px;max-width:62ch}
+.mission .mjoin .btn{background:#000;color:#fff;white-space:nowrap}
+.mission .mjoin .btn:hover{background:#fff;color:#000}
+.brandbar+header{margin-bottom:calc(var(--sp) / 2)}
+
+header .logo{transition:opacity .25s}
+header:not(.stuck) .logo{opacity:0;pointer-events:none}
+@media (max-width:700px){
+  .bb-logos{padding-block:14px;gap:6px}
+  .bb-mark{height:52px}
+  .bb-word img{height:22px}
+  .bb-t1{font-size:1.2rem}
+}
+
+@media (max-width:560px){
+  nav.main .btn{display:inline-flex !important}
+  .bar{padding-block:12px}
+  header .logo .logomark{height:40px}
+}
+.bb-solo{display:flex;justify-content:center}.bb-full{display:block;height:clamp(90px,12vw,160px);width:auto;max-width:100%;border-radius:0}
+@media (max-width:700px){.bb-full{height:auto;width:min(86vw,420px)}}
+section[id],#top{scroll-margin-top:96px}nav.main a.n.on{color:var(--pink-ink,#c2185b);box-shadow:inset 0 -3px 0 currentColor}
+
+#quan .hs,#isaiah .hs,#greg .hs,#oni5 .hs,#lfa235 .hs,#marathon .hs{color:var(--pink-ink);font-weight:700}
+.lm-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin-top:24px}
+.lm-grid img,.lm-row img,.lm-wide{width:100%;height:100%;object-fit:cover;border-radius:2px;display:block}
+.lm-grid img{aspect-ratio:auto;height:420px}
+.lm-copy{max-width:760px;margin:36px auto;display:grid;gap:18px}
+.lm-pull{font:700 clamp(1.6rem,2.6vw,2.2rem)/1 var(--head)}
+.lm-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.lm-row img{aspect-ratio:3/4.4}
+.lm-wide{margin-top:12px;aspect-ratio:2.9;height:auto}
+@media (max-width:760px){.lm-grid{grid-template-columns:1fr 1fr}.lm-grid .lm-a{grid-column:1/-1;height:240px}.lm-grid img{height:260px}.lm-row{grid-template-columns:1fr 1fr}}
+.lfa-win{aspect-ratio:auto}
+.lfa-row{display:grid;grid-template-columns:1.45fr 1fr;gap:12px;margin-top:12px}.lfa-row img{width:100%;height:420px;object-fit:cover;border-radius:2px}
+#lfa235{padding-bottom:0}
+@media (max-width:760px){.lfa-row{grid-template-columns:1fr}.lfa-row img{height:260px}}
+@media (min-width:900px){.fwall{grid-template-columns:repeat(5,minmax(0,1fr)) !important}}
+.ch-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:12px}.ch-facts div{background:var(--bg);padding:16px 18px}.ch-facts small{display:block;font:600 .85rem var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--pink-ink)}.ch-facts b{font:700 1.4rem/1.05 var(--head)}
+@media (max-width:760px){.ch-facts{grid-template-columns:1fr 1fr}}
+.oni-box{margin-top:12px;background:#111;color:#fff;padding:clamp(24px,3.4vw,44px);display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,56px)}.oni-box h3{font:700 clamp(1.8rem,2.6vw,2.4rem)/1 var(--head);color:var(--pink);margin-bottom:14px}.oni-box p{color:#ddd}.oni-box b{color:#fff}.oni-box dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:18px 0 0}.oni-box dt{font:600 1rem var(--head);text-transform:uppercase;letter-spacing:.08em;color:#aaa}.oni-box dd{margin:0}.oni-box a{color:#fff}.oni-box ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}.oni-box li{border-bottom:1px solid #333;padding-bottom:8px;font-weight:600}
+@media (max-width:760px){.oni-box{grid-template-columns:1fr}}
+.lm-grid img,.lfa-row img,.lm-row img{object-position:50% 12%}
+
+/* Athletes palette, sampled from the logo splash */
+:root{--sp-red:#e42424;--sp-orange:#f1592a;--sp-yellow:#fce80c;--sp-lime:#9ccc3c;--sp-green:#3cb454;--sp-cyan:#24b4cc;--sp-blue:#246cb4;--sp-purple:#6c249c;--sp-magenta:#cc2484}
+/* story sections rotate through the splash */
+#chantel{--c:var(--sp-magenta)}#greg{--c:var(--sp-blue)}#isaiah{--c:var(--sp-red)}#quan{--c:var(--sp-purple)}#jonathan{--c:var(--sp-green)}#kent{--c:var(--sp-cyan)}#oni5{--c:var(--sp-orange)}#lfa235{--c:var(--sp-red)}#marathon{--c:var(--sp-blue)}
+#chantel,#greg,#isaiah,#quan,#jonathan,#kent,#oni5,#lfa235,#marathon{border-top:6px solid var(--c);padding-top:calc(var(--sp) * .6)}
+#chantel .eyebrow,#greg .eyebrow,#isaiah .eyebrow,#quan .eyebrow,#jonathan .eyebrow,#kent .eyebrow,#oni5 .eyebrow,#lfa235 .eyebrow,#marathon .eyebrow{color:var(--c)}
+#chantel .lm-pull,#greg .lm-pull,#isaiah .lm-pull,#quan .lm-pull,#jonathan .lm-pull,#kent .lm-pull,#oni5 .lm-pull,#lfa235 .lm-pull,#marathon .lm-pull{border-left:5px solid var(--c);padding-left:18px}
+#oni5 .hs,#lfa235 .hs,#marathon .hs,#greg .hs,#isaiah .hs,#quan .hs{color:var(--c)}
+.ch-facts small{color:var(--sp-magenta)}
+.oni-box h3{color:var(--sp-yellow)}
+/* program chips in splash colors */
+.chips button:nth-child(9n+2){background:var(--sp-red);color:#fff}
+.chips button:nth-child(9n+3){background:var(--sp-orange);color:#000}
+.chips button:nth-child(9n+4){background:var(--sp-yellow);color:#000}
+.chips button:nth-child(9n+5){background:var(--sp-lime);color:#000}
+.chips button:nth-child(9n+6){background:var(--sp-green);color:#000}
+.chips button:nth-child(9n+7){background:var(--sp-cyan);color:#000}
+.chips button:nth-child(9n+8){background:var(--sp-blue);color:#fff}
+.chips button:nth-child(9n+9){background:var(--sp-purple);color:#fff}
+.chips button:nth-child(9n+10){background:var(--sp-magenta);color:#fff}
+.chips button:hover{background:#000 !important;color:#fff !important}
+/* get-involved promos */
+.promo.p{background:var(--sp-cyan) !important}
+.promo.y{background:var(--sp-lime) !important}
+.bb-tag{background:#f1592a !important;color:#fff}
+.heroblock{background:#f1592a !important}
+.hero h1 .l1{color:#fff !important}
+nav.main .btn{background:#f1592a !important;color:#fff !important}nav.main .btn:hover{background:#000 !important}
+@media (max-width:700px){.heromedia{aspect-ratio:2/1 !important}}
+.mission .mbox{background:#fce80c !important;color:#000}
+.mission .mbox .hl{color:#e42424 !important}
+.mission .mjoin{border-top-color:#000 !important}
+#chantel{border-top:1px solid #bdbdbd !important;margin-top:calc(var(--sp) * .6)}
+#chantel .ch-facts{margin-top:36px}
+#greg{border-top:1px solid #bdbdbd !important;margin-top:calc(var(--sp) * .6)}
+#chantel .lm-grid{grid-template-columns:1fr 1.2fr 1fr}#chantel .lm-grid img{height:clamp(300px,38vw,490px);aspect-ratio:auto}
+@media (max-width:760px){#chantel .lm-grid{grid-template-columns:1fr 1fr}#chantel .lm-grid .lm-b{grid-column:1/-1;order:-1;aspect-ratio:4/3}}
+#chantel .eyebrow,#greg .eyebrow,#isaiah .eyebrow,#quan .eyebrow,#jonathan .eyebrow,#kent .eyebrow,#oni5 .eyebrow,#lfa235 .eyebrow,#marathon .eyebrow{color:#f1592a !important}
+#greg .lm-grid{grid-template-columns:1fr 1.6fr 1fr}#greg .lm-grid img{height:clamp(260px,32vw,420px);aspect-ratio:auto}
+@media (max-width:760px){#greg .lm-grid{grid-template-columns:1fr 1fr}#greg .lm-grid .lm-b{grid-column:1/-1;order:-1}}
+#chantel,#greg,#isaiah,#quan,#jonathan,#kent,#oni5,#lfa235,#marathon{border-top:1px solid #bdbdbd !important;margin-top:calc(var(--sp) * .6)}
+#chantel .lm-pull,#greg .lm-pull,#isaiah .lm-pull,#quan .lm-pull,#jonathan .lm-pull,#kent .lm-pull,#oni5 .lm-pull,#lfa235 .lm-pull,#marathon .lm-pull{border-left-color:#bdbdbd !important}
+#oni5 .lm-grid{grid-template-columns:1fr 1.3fr 1fr}#oni5 .lm-grid img{height:clamp(300px,38vw,490px);aspect-ratio:auto}
+@media (max-width:760px){#oni5 .lm-grid{grid-template-columns:1fr 1fr}#oni5 .lm-grid .lm-b{grid-column:1/-1;order:-1}}
+.oni-box{background:#fce80c !important;color:#000 !important}.oni-box h3{color:#000 !important}.oni-box p,.oni-box b,.oni-box dd,.oni-box a{color:#000 !important}.oni-box dt{color:#333 !important}.oni-box li{border-bottom-color:rgba(0,0,0,.25) !important}
+#quan .lm-grid{grid-template-columns:1fr 1.2fr 1fr}#quan .lm-grid img{height:clamp(300px,38vw,490px);aspect-ratio:auto}#quan .qb-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}#quan .qb-row img{width:100%;height:clamp(300px,36vw,460px);object-fit:cover;display:block}
+@media (max-width:760px){#quan .lm-grid{grid-template-columns:1fr 1fr}#quan .lm-grid .lm-b{grid-column:1/-1;order:-1}#quan .qb-row{grid-template-columns:1fr 1fr}#quan .qb-row img:first-child{grid-column:1/-1}}
+#quan .qb-top{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}#quan .qb-top img{width:100%;height:clamp(260px,30vw,400px);object-fit:cover;display:block}
+@media (max-width:760px){#quan .qb-top{grid-template-columns:1fr 1fr}}
+#quan .qb-top{grid-template-columns:1fr 1.2fr 1fr}#quan .qb-top .qb-cover{grid-column:3;height:clamp(300px,38vw,490px)}
+@media (max-width:760px){#quan .qb-top{grid-template-columns:1fr 1fr}#quan .qb-top .qb-cover{grid-column:2}}
+#quan .qb-top .qb-2{grid-column:2;height:clamp(300px,38vw,490px)}
+@media (max-width:760px){#quan .qb-top .qb-2{grid-column:1}}
+#quan .qb-top{display:flex !important;gap:12px}#quan .qb-top img{height:auto !important;min-width:0;width:0;object-fit:cover}#quan .qb-top .qb-2{flex:.692 1 0;aspect-ratio:.692}#quan .qb-top .qb-3{flex:.619 1 0;aspect-ratio:.619}#quan .qb-top .qb-cover{flex:.75 1 0;aspect-ratio:.75}
+@media (max-width:760px){#quan .qb-top{flex-wrap:wrap}#quan .qb-top .qb-2{flex:1 1 100%;width:100%}}
+#quan .qb-top .qb-cover{order:-1}
+#lfa235 .lfa-cov{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:40px;align-items:center;margin-bottom:12px}#lfa235 .lfa-cov img{width:100%;height:auto;display:block}#lfa235 .lfa-cov .lm-copy{margin:0;max-width:none}
+@media (max-width:760px){#lfa235 .lfa-cov{grid-template-columns:1fr;gap:20px}}
+#lfa235 .lfa-cov{grid-template-columns:minmax(0,.773fr) minmax(0,.693fr) minmax(0,1.25fr);gap:12px}#lfa235 .lfa-cov .lm-copy{padding-left:28px}#lfa235 .lfa-med{height:auto !important;aspect-ratio:auto !important;object-fit:contain}
+@media (max-width:760px){#lfa235 .lfa-cov{grid-template-columns:minmax(0,.773fr) minmax(0,.693fr)}#lfa235 .lfa-cov .lm-copy{grid-column:1/-1;padding-left:0}}
+#lfa235 .lfa-cov{grid-template-columns:minmax(0,.773fr) minmax(0,.693fr) minmax(0,.832fr)}#lfa235 .lfa-cov img{height:100%;object-fit:cover}#lfa235 .lfa-cov .lm-copy{grid-column:1/-1;padding:24px 0 0;max-width:62ch;margin:0 auto}#lfa235 .lfa-bot{display:grid;grid-template-columns:minmax(0,.805fr) minmax(0,1.871fr);gap:12px;margin-top:12px}#lfa235 .lfa-bot img{width:100%;height:auto;display:block}
+@media (max-width:760px){#lfa235 .lfa-cov{grid-template-columns:1fr 1fr}#lfa235 .lfa-bot{grid-template-columns:1fr}}
+#lfa235 .lfa-bot{grid-template-columns:1fr}
+#lfa235 .lfa-cov{grid-template-columns:minmax(0,.773fr) minmax(0,.693fr) minmax(0,1.25fr)}#lfa235 .lfa-cov .lm-copy{grid-column:auto;padding:0 0 0 28px;max-width:none;margin:0}
+@media (max-width:760px){#lfa235 .lfa-cov{grid-template-columns:1fr 1fr}#lfa235 .lfa-cov .lm-copy{grid-column:1/-1;padding:0}}
+#lfa235 .lfa-top{margin:0 0 12px}
+</style>
+
+<div class="brandbar" id="brand">
+  <div class="wrap bb-logos bb-solo"><a href="#top" aria-label="Athletes for Trauma home"><img class="bb-full" src="images/ath_full.png" alt="Athletes for Trauma"></a></div>
+  <div class="bb-tag"><div class="wrap"><p><span class="bb-t1">Where Recovery is an Art</span></p></div></div>
+</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Athletes for Trauma home"><img class="logomark" src="images/logomark.png" alt=""></a>
+    <nav class="main" aria-label="Main">
+      <a class="n" href="#top">Home</a>
+      <a class="n" href="#programs">Programs</a>
+      <a class="n" href="https://claude.ai/artifact/KKwiahhJSSCeKNyri3ENkA">Artists for Trauma</a>
+      <a class="n" href="#features">Athletes</a>
+      <a class="n" href="#chantel">Stories</a>
+            <a class="n" href="#about">About</a>
+      <a class="n" href="#events">Events</a>
+      <a class="n" href="#press">Press</a>
+      <a class="n" href="#partners">Partners</a>
+      <a class="n ig" href="https://www.instagram.com/artistsfortrauma/">Instagram</a>
+      <a class="btn" href="#give">Give with Zeffy</a>
+    </nav>
+  </div>
+</header>
+<script>
+(function(){var bb=document.getElementById('brand'),hd=document.querySelector('header');if(!bb||!hd||!('IntersectionObserver' in window)){hd&&hd.classList.add('stuck');return}
+new IntersectionObserver(function(e){hd.classList.toggle('stuck',!e[0].isIntersecting)}).observe(bb)})();
+</script>
+
+
+<main id="top">
+  <section class="hero">
+    <div class="heroblock"><div class="wrap">
+      <h1><span class="l1">Recovery</span>in motion</h1>
+      <div class="row"><b>Strength · Movement · Community</b></div><p class="spirit">Powered by <span>human spirit</span><sup class="tm">TM</sup></p>
+    </div></div>
+    <div class="heromedia">
+      <img src="images/lm_collage.jpg" style="object-position:50% 50%" alt="Los Angeles Marathon collage: a racer celebrating with the Argentine flag, a wheelchair racer breaking the tape, a finisher with his medal, and Laura Sharpe with Paralympian Amanda McGrory">
+      
+    </div>
+    <div class="wrap intro">
+      <div style="display:grid;gap:8px"><p style="font-weight:700">Free adaptive sports and movement for people rebuilding after trauma.</p><p style="font-size:1.25rem;color:var(--mute)">Civilian and military survivors. All ages and abilities. Families are welcome.</p></div>
+      <div class="ctas"><a class="btn dark" href="#programs">See programs</a></div>
+    </div>
+  </section>
+
+  <section id="about" class="mission">
+    <div class="mbox"><div class="wrap">
+      <div class="head"><div><span class="eyebrow">Strength. Movement. Community. – It takes a Team!</span></div></div>
+      <p class="big">Athletes for Trauma brings the power of sport to recovery: <span class="hl">FUN</span>, adaptive training, coaching and competition, free of charge, so every trauma survivor can rediscover <span class="hl">strength &amp; teamwork</span> and support their mental, physical and emotional well&nbsp;being&nbsp;<span class="spark">✺</span></p>
+      <div class="mjoin"><div><b>Are you or someone you know a trauma survivor?</b><span>Athletes for Trauma can help. All programs are free of charge to veterans and civilian trauma survivors.</span></div><a class="btn" href="https://artistsfortrauma.org/become-a-student-artist/">Join here</a></div>
+    </div></div>
+  </section>
+
+  <section id="features">
+    <div class="wrap"><div class="head"><div><span class="eyebrow">Laura Sharpe's Athletes Profile</span><h2>Athlete features</h2><p>Fighters, coaches and competitors from the Athletes for Trauma community. Tap a cover to read the feature.</p></div><a class="more" href="https://www.instagram.com/artistsfortrauma/">Follow on Instagram</a></div></div>
+    <div class="wrap"><div class="fwall" id="fwall"></div></div>
+  </section>
+
+  <section id="chantel">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Sponsored athlete · The Butterfly Brawl, Santa Monica Pier, August 22, 2026</span><h2>Chantel “Chicanita” Navarro</h2><p>Athletes for Trauma is proud to sponsor professional boxer Chantel Navarro, seven-time U.S. National Amateur Champion and WBC Youth World Bantamweight Champion, as she headlines The Butterfly Brawl hosted by FightBook at the Santa Monica Pier.</p></div></div>
+      <div class="lm-grid">
+        <img class="lm-a" src="images/f_chantel.jpg" style="object-position:50% 0%" alt="Chantel Navarro magazine cover">
+        <img class="lm-b" src="images/ch_young.jpg" style="object-position:62% 30%" alt="Chantel Navarro in pink gloves">
+        <img class="lm-c" src="images/ch_win.jpg" alt="Chantel Navarro's arm raised in victory">
+      </div>
+      
+      <div class="ch-facts">
+        <div><small>Nickname</small><b>“Chicanita”</b></div>
+        <div><small>Division</small><b>Bantamweight</b></div>
+        <div><small>Hometown</small><b>Glendale, California</b></div>
+        <div><small>Pro record</small><b>8–0</b></div>
+        <div><small>Amateur</small><b>Seven-time U.S. National Champion</b></div>
+        <div><small>Olympic trials</small><b>2024 U.S. Olympic Team Trials</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="greg">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Laura Sharpe's Athletes Profile · October 2026</span><h2>Greg Fante: the Coach of Louisville</h2><p>As President and CEO of the Louisville Sports Commission, Greg Fante is helping shape what sports can do for a city, on the field and far beyond it: creating the team, the opportunities and the partnerships that allow Louisville to win.</p></div></div>
+      <div class="lm-grid">
+        <img class="lm-a" src="images/f_greg.jpg" style="object-position:50% 0%" alt="Greg Fante magazine cover">
+        <img class="lm-b" src="images/gf_office.jpg" style="object-position:50% 30%" alt="Greg Fante at his desk">
+        <img class="lm-c" src="images/gf_desk.jpg" style="object-position:50% 20%" alt="Portrait of Greg Fante">
+      </div>
+    </div>
+  </section>
+
+  <section id="oni5">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Athletes for Trauma presents · October 10, 2026</span><h2>Damon “The Demon” Bell: from the other side of the cage</h2><p>Formerly known inside the cage as “The Demon,” Damon Bell competed in more than 30 fights across five combat sports. Now he is turning a fighter's perspective into a platform for the athletes coming next, as a coach, gym owner and promoter.</p></div></div>
+      <div class="lm-grid">
+        <img class="lm-a" src="images/f_damon.jpg" style="object-position:50% 0%" alt="Damon Bell magazine cover">
+        <img class="lm-b" src="images/db_fight.jpg" style="object-position:50% 0%" alt="Damon Bell landing a punch in the ring">
+        <img class="lm-c" src="images/db_bw.jpg" style="object-position:50% 0%" alt="Damon Bell in a fighting stance">
+      </div>
+      
+      
+      <div class="lfa-row" style="grid-template-columns:1fr 1fr">
+        <img src="images/db_lfa.jpg" style="object-position:50% 0%" style="object-position:50% 25%" alt="Eddie Donaldson, Anthony McCormick and Damon Bell at LFA">
+        <img src="images/db_trust.jpg" style="object-position:50% 0%" style="object-position:50% 25%" alt="Damon Bell, Laura Sharpe and Eddie Donaldson">
+      </div>
+      <div class="oni-box">
+        <div>
+          <h3>ONI Fights 5: MMA</h3>
+          <p>ONI's first MMA event takes over the historic Galt House Hotel in Louisville, with TRUST Agency as partner and Artists for Trauma and Athletes for Trauma supporting the event and its athletes. Guests can expect full dinner plates and a silent auction of gym memberships and custom pieces. <b>All auction proceeds go to Athletes for Trauma.</b></p>
+          <dl>
+            <dt>Date</dt><dd>Saturday, October 10, 2026</dd>
+            <dt>Doors</dt><dd>5:00 PM ET · Fights start 6:00 PM ET</dd>
+            <dt>Venue</dt><dd>The Galt House Hotel, Louisville, KY</dd>
+            <dt>Tickets</dt><dd>From $40 at <a href="https://www.onifights.com">onifights.com</a></dd>
+          </dl>
+        </div>
+        <div>
+          <h3>Announced fight card</h3>
+          <ul>
+            <li>Isaiah Ferguson vs. Chris Johnson</li><li>Alexander Collett vs. Christopher Beal</li><li>Dakota Clements vs. Raikage Spencer</li><li>David Wright vs. Mouhamed Cisse</li><li>Jaden Sheppard vs. Isiah Riddick</li><li>Malachi Kleber vs. Triston Williams</li><li>Suvisesh Pothuraju vs. Angel Romero</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quan">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Laura Sharpe's Artist Profile · Faith · Family · Music</span><h2>Quan.B: from the football field to the octagon</h2><p>Years after an injury closed the door on the athletic future Quan had imagined, music brought him back into an arena. The Louisville R&amp;B and gospel singer sang the national anthem at LFA 235, where Artists for Trauma and Athletes for Trauma were sponsors.</p></div></div>
+      <div class="qb-top">
+        <img class="qb-2" src="images/qb_mic2.jpg" style="object-position:50% 0%" alt="Quan.B with a microphone in a leopard-collar jacket">
+        <img class="qb-3" src="images/qb_stool2.jpg" style="object-position:50% 0%" alt="Quan.B seated on a stool in a tuxedo, full length">
+        <img class="qb-cover" src="images/f_quan2.jpg" style="object-position:50% 0%" alt="Quan.B Rhythm and Roots cover">
+      </div>
+      
+    </div>
+  </section>
+
+      <section id="lfa235">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Fight night · Louisville, Kentucky</span><h2>Proud sponsors of LFA 235</h2><p>Artists for Trauma and Athletes for Trauma were honored to serve as proud sponsors of LFA 235, where Founder Laura Sharpe and TRUST Agency Founder Eddie Donaldson joined athletes, artists, partners and supporters for an inspiring evening of connection and purpose.</p></div></div>
+      <div class="lfa-bot lfa-top">
+        <img src="images/lfa_cage.jpg" alt="Sponsors and partners gathered in the LFA 235 cage">
+      </div>
+      <div class="lm-copy">
+        <p>LFA 235 delivered unforgettable moments. The evening featured Jake Woodley's record-setting 3.6-second knockout, the fastest finish in LFA history, along with Zayne Havener's second-round submission victory in the main event. Kestin McClain extended his undefeated record with a hard-fought unanimous decision.</p>
+        <p class="lm-pull">More than a night of competition, LFA 235 reflected the courage, perseverance and <b class="hs">human spirit</b> that inspire our mission.</p>
+      </div>
+      <img class="lm-wide lfa-win" src="images/lfa_winners.jpg" alt="The six LFA 235 winners: Jake Woodley, David Richardson, Erik Calvert, Kestin McClain, Wilson Lopshire and Zayne Havener">
+      
+      
+      
+    </div>
+  </section>
+
+  <section id="marathon">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Race day · March 8, 2026</span><h2>The Los Angeles Marathon is more than a race</h2><p>It&rsquo;s a living symbol of perseverance, determination and the extraordinary strength <b class="hs">powered by human spirit.</b></p></div></div>
+      <div class="lm-grid">
+        <img class="lm-a" src="images/lm_tape.jpg" alt="A wheelchair racer breaking the finish-line tape">
+        <img class="lm-b" src="images/lm_medal.jpg" alt="A para athlete with his finisher medal and a supporter">
+        <img class="lm-c" src="images/lm_hug.jpg" alt="A finisher embraced at the line">
+      </div>
+      <div class="lm-copy">
+        <p>At the 2026 ASICS Los Angeles Marathon, Artists for Trauma was honored to celebrate the Wheelchair Division and para athletes in collaboration with The McCourt Foundation, California Rehabilitation Foundation and California Rehabilitation Institute.</p>
+        <p>For many of these para athletes, the marathon represents more than 26.2 miles. It means recovery after trauma, the courage to rebuild, and the refusal to let life-altering challenges define the future.</p>
+        <p class="lm-pull">Each athlete who crossed the finish line embodied what it means to be <b class="hs">Powered by Human Spirit.</b></p>
+      </div>
+      <div class="lm-row">
+        <img src="images/lm_flag.jpg" alt="A racer wrapped in the Mexican flag">
+        <img src="images/lm_p1.jpg" alt="An Achilles Freedom Team finisher with his medal">
+        <img src="images/lm_p2.jpg" alt="A finisher pointing to his medal">
+        <img src="images/lm_p3.jpg" alt="A finisher holding up her medal">
+      </div>
+    </div>
+  </section>
+
+  <section id="donate">
+    <div class="donate">
+      <div class="ph"><img src="images/lm_medal.jpg" style="object-position:50% 40%" alt="A para athlete with his marathon finisher medal and a supporter"></div>
+      <div class="txt"><h2>Give with Zeffy</h2>
+        <p class="dlead">Your support turns hope into action.</p>
+        <p>Trauma can take away the life someone knew in an instant. Sport gives them a way back in. Your gift puts a bike, a pair of gloves or a running chair within reach, with a coach beside them who adapts to whatever they can do today. For many, it is the first time since their injury they have trained, competed, or felt like part of a team again.</p>
+        <p>Every program is free to veterans and civilian survivors, so we rely on people like you. Every donation honors the bravery, courage and tenacity of the survivors we serve.</p>
+        <blockquote class="dquote">“Hard work never betrays you.”<cite>Damon Bell, MMA fighter</cite></blockquote>
+        <p>When you give, you are not just funding a workshop. You are telling a survivor that their story did not end on the worst day of their life, and that there is still beauty, purpose and community waiting for them.</p>
+        <p class="dnote"><b>100% arrives whole.</b> Zeffy charges AFT nothing, so your full gift goes to equipment, coaching and programs. Artists For Trauma is a 501(c)(3) nonprofit, EIN 45-4624556.</p>
+        <a class="btn dark" href="#give">Give with Zeffy</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap"><div class="head"><div><h2>Our community</h2></div></div></div>
+    <div class="wrap duo">
+      <div class="mod">
+        <div class="ph"><img src="images/lm_vols.jpg" style="object-position:50% 0%" alt="Volunteers and para athletes with the finish-line tape at the Los Angeles Marathon"></div>
+        <span class="eyebrow">Our community</span>
+        <h3>Who We Serve</h3>
+        <p>Civilian and military survivors of all ages; impacted by life-altering traumas.</p>
+        <a class="btn out" href="https://artistsfortrauma.org/about/">Our Community</a>
+      </div>
+      <div class="mod">
+        <div class="ph"><img src="images/lm_achilles.jpg" alt="Achilles International athletes with their marathon medals"></div>
+        <span class="eyebrow">Healing through sport</span>
+        <h3>What We Do</h3>
+        <p>We provide adaptive sports, training and competition experiences that empower the mental, physical and emotional well being of survivors.</p>
+        <a class="btn out" href="https://artistsfortrauma.org/about/">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="involved">
+    <div class="promos">
+      <div class="promo p"><span class="eyebrow">Become an Athlete</span><h3>Are you or someone you know a trauma survivor?</h3><p>Athletes for Trauma can help.</p><a class="more" href="https://artistsfortrauma.org/become-a-student-artist/">Join here</a></div>
+      <div class="promo y"><span class="eyebrow">Coach or Volunteer</span><h3>We need coaches and volunteers in all parts of the country</h3><p>Please complete the Expression of Interest form.</p><a class="more" href="https://artistsfortrauma.org/become-a-volunteer-artist/">Sign up to volunteer</a></div>
+    </div>
+  </section>
+
+  <section id="programs">
+    <div class="wrap">
+      <div class="head"><div><h2>Programs</h2><p>All Athletes for Trauma programs are FREE of charge to veterans and civilian trauma survivors. Pick a sport, or browse them all.</p></div></div>
+      <div class="chips" id="chips" role="group" aria-label="Filter programs"></div>
+      <div class="pcards" id="pcards"></div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="wrap">
+      <div class="head"><div><h2>Recent events</h2></div><a class="more" href="https://artistsfortrauma.org/past-events/">View all</a></div>
+      <div class="cards">
+        <a class="card" href="#oni5"><div class="ph"><img src="images/if_poster.jpg" style="object-position:50% 30%" alt="ONI Fights 5 MMA poster"></div><div class="tags">Fight night • Louisville, KY</div><h3>Athletes for Trauma presents Oni Fights 5 MMA at the Galt House Hotel, October 10, 2026. Tickets at onifights.com</h3></a>
+        <a class="card" href="#marathon"><div class="ph"><img src="images/lm_tape.jpg" alt="A wheelchair racer breaking the tape at the Los Angeles Marathon"></div><div class="tags">Race day • Century City</div><h3>Celebrating the Wheelchair Division and para athletes at the 2026 ASICS Los Angeles Marathon</h3></a>
+        <a class="card" href="#lfa235"><div class="ph"><img src="images/lfa_fight.jpg" alt="Two fighters exchanging strikes in the LFA 235 cage"></div><div class="tags">Sponsorship • Louisville, KY</div><h3>Artists for Trauma and Athletes for Trauma sponsor LFA 235 with Laura Sharpe and Eddie Donaldson</h3></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="numbers">
+    <div class="nbox"><div class="wrap">
+      <div class="head"><div><h2>The numbers</h2><p>Why this work matters. Sources sit on each card.</p></div><a class="btn dark" href="https://www.zeffy.com/">Give with Zeffy</a></div>
+      <div class="stats">
+      <div class="stat"><span class="lbl">Ages</span><b>1–44</b><span>Injury leads this span of life.</span><span class="src">CDC WISQARS, data through 2023</span></div>
+      <div class="stat"><span class="lbl">Spinal cord injury</span><b>18,000</b><span>New injuries a year, in round numbers.</span><span class="src">NSCISC Facts and Figures, recent national estimate</span></div>
+      <div class="stat"><span class="lbl">Causes, 2015–2024</span><b>Falls rose</b><span>Vehicles still lead. Falls are the change.</span><span class="src">NSCISC, traumatic SCI causes 2015–2024</span></div>
+      <div class="stat"><span class="lbl">The gift</span><b>100%</b><span>A Zeffy donation arrives whole.</span><span class="src">Artists For Trauma · EIN 45-4624556</span></div>
+    </div>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="insiderbg"><div class="wrap insider">
+      <div><h2>Stay connected</h2><p>Programs, fight nights, race days and athlete stories from Athletes For Trauma, in your inbox.</p></div>
+      <form id="news-form">
+        <div class="field"><label for="news-name">First name</label><input id="news-name" autocomplete="given-name"></div>
+        <div class="field"><label for="news-email">Email</label><input id="news-email" type="email" autocomplete="email" required></div>
+        <button class="btn" type="submit">Submit</button>
+        <p class="status" id="news-status" hidden>Preview only: sign-up gets connected at launch.</p>
+      </form>
+    </div></div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <div class="head"><div><h2>Visit &amp; contact</h2></div></div>
+      <div class="visit">
+        <div><small>Executive Offices</small><span>4267 Marina City Drive, PH6<br>Marina del Rey, CA 90292</span></div>
+        <div><small>Email</small><span><span id="em">info@artistsfortrauma.org</span><button class="copybtn" type="button" id="copy-em">Copy</button></span></div>
+        <div><small>Tel</small><span>424.500.2422</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+<main id="fview" hidden></main>
+<main id="pview" class="subpage" hidden>
+<a class="fback wrap" href="#top" style="display:block;padding-top:28px;margin-bottom:0">← Home</a>
+<div data-page="press" hidden>
+  <section id="press">
+    <div class="wrap rule pink">
+      <div class="head"><div><span class="eyebrow">In the news</span><h2>Press</h2><p>Coverage of Artists for Trauma, our students and our partners.</p></div></div>
+      <div class="plist">
+        <a class="prow" href="https://abc7.com/health/art-helps-trauma-survivors/7216682/"><span class="o">ABC7 Los Angeles</span><h3>Art helps trauma survivors</h3><span class="go">↗</span></a>
+        <a class="prow" href="https://obeygiant.com/muhammad-ali-heavyweight-ideals-mural-in-louisville-kentucky/"><span class="o">OBEY Giant</span><h3>Muhammad Ali “Heavyweight Ideals” mural in Louisville, Kentucky</h3><span class="go">↗</span></a>
+        <a class="prow" href="https://www.jejunemagazine.com/home/aft"><span class="o">Jejune Magazine</span><h3>Artists for Trauma</h3><span class="go">↗</span></a>
+        <a class="prow" href="https://www.vcreporter.com/2019/05/wearing-their-stories-beautiful-disaster-relaunches-collection-empowers-trauma-victims/"><span class="o">VC Reporter</span><h3>Wearing their stories: Beautiful Disaster relaunches collection, empowers trauma victims</h3><span class="go">↗</span></a>
+        <a class="prow" href="https://www.dailymail.co.uk/health/article-6415677/Americas-Got-Talent-star-plane-crash-victim-undergoes-life-changing-surgery.html"><span class="o">Daily Mail</span><h3>America’s Got Talent star and plane crash survivor undergoes life-changing surgery</h3><span class="go">↗</span></a>
+        <a class="prow" href="https://www.newswire.com/news/despite-covid-19-artists-for-trauma-had-a-successful-2020-21304765"><span class="o">Newswire</span><h3>Despite COVID-19, Artists for Trauma had a successful 2020</h3><span class="go">↗</span></a>
+        <a class="prow" href="https://www.dailynews.com/2014/08/26/eric-benet-to-headline-rhythm-joy-festival-in-woodland-hills/"><span class="o">Los Angeles Daily News</span><h3>Eric Benét to headline Rhythm &amp; Joy Festival in Woodland Hills</h3><span class="go">↗</span></a>
+      </div>
+      <div style="margin-top:22px"><a class="more" href="https://artistsfortrauma.org/mediapress/">All press</a></div>
+    </div>
+  </section>
+</div>
+<div data-page="give" hidden>
+  <section class="gv-hero">
+    <div class="wrap"><span class="eyebrow">Give with Zeffy</span><h1>Donate to Artists For Trauma</h1><p class="gv-lead">Your gift brings free, adaptive art workshops to veterans and civilian trauma survivors, so recovery can begin with a brush, a camera, a song or a lump of clay.</p><div class="gv-ctas"><a class="btn" href="https://www.zeffy.com/">Donate now</a><a class="btn out" style="width:auto" href="#give-monthly">Give monthly</a></div></div>
+    <div class="gv-photo"><img src="images/do.jpg" style="object-position:50% 100%" alt="A survivor in a wheelchair in front of a large street mural"></div>
+  </section>
+
+  <section>
+    <div class="wrap gv-two">
+      <h2>Your support turns recovery into an art</h2>
+      <div class="gv-copy"><p>Every donation honors the bravery, courage and tenacity of the survivors we serve. It pays for the supplies, studios and teaching artists that make each workshop possible, and it keeps every program free of charge.</p><p class="gv-fine">Artists For Trauma is a 501(c)(3) nonprofit organization, EIN 45-4624556. Gifts are tax-deductible as allowed by law.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap rule pink gv-two">
+      <h2>Creativity, connectivity, community</h2>
+      <div class="gv-copy"><p>Founded in 2011 by trauma survivor Laura Sharpe, AFT pairs survivors with established artists for hands-on workshops in photography, filmmaking, painting, pottery, music, dance, writing, yoga and more.</p><p>Workshops happen in rehab hospitals, trauma centers, community spaces and public art projects, from Los Angeles to Louisville, alongside partners like the California Rehabilitation Institute and the Muhammad Ali Center.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap gv-stats">
+      <div><b>2011</b><span>Founded by survivor Laura Sharpe</span></div>
+      <div><b>12</b><span>Art forms on offer, and counting</span></div>
+      <div><b>$0</b><span>Cost to every survivor who joins</span></div>
+    </div>
+  </section>
+
+  <section class="gv-quote">
+    <div class="gv-qimg"><img src="images/band.jpg" alt=""></div>
+    <div class="wrap"><blockquote>“The whole experience was deeply moving and I am grateful to Lauree and Ford for their generous and loving spirits.”</blockquote><cite>Bruce, AFT workshop participant</cite></div>
+  </section>
+
+  <section>
+    <div class="wrap rule pink gv-used">
+      <div><h2>How your donation is used</h2><p class="gv-copy">Zeffy is a free platform for nonprofits, so 100% of your gift reaches AFT. Here is where it goes.</p>
+        <ul class="gv-list">
+          <li><b>Art supplies</b><span>Paint, clay, cameras and adaptive tools, so every survivor can take part whatever their range of motion.</span></li>
+          <li><b>Studio time and workshops</b><span>Free sessions led by working artists in hospitals, rehab centers and community spaces.</span></li>
+          <li><b>Survivors and families</b><span>Programs for civilian and military survivors of all ages, with families welcome.</span></li>
+          <li><b>Volunteer artists</b><span>Training and support for the volunteers who bring AFT to new cities.</span></li>
+        </ul></div>
+      <figure class="gv-fig"><img src="images/lm_group.jpg" alt="Para athletes and Laura Sharpe at the Los Angeles Marathon finish"><figcaption>An AFT painting workshop.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="give-monthly">
+    <div class="gv-monthly"><div class="wrap gv-two">
+      <h2>Become a monthly giver</h2>
+      <div class="gv-copy"><p>A monthly gift gives AFT steady support to plan workshops months ahead and say yes when a hospital or survivor asks. Choose "monthly" when you give on Zeffy.</p><a class="btn dark" href="https://www.zeffy.com/">Give monthly</a></div>
+    </div></div>
+  </section>
+
+  <section>
+    <div class="wrap rule pink">
+      <div class="head"><div><h2>More ways to help</h2></div></div>
+      <div class="gv-cards">
+        <a class="gv-card" href="https://artistsfortrauma.org/become-a-volunteer-artist/"><div class="ph"><img src="images/workshop.jpg" alt=""></div><b>Volunteer</b><span>Share your art form with survivors near you.</span><span class="more">Sign up</span></a>
+        <a class="gv-card" href="#partners"><div class="ph"><img src="images/e1.jpg" alt=""></div><b>Partner with us</b><span>Hospitals, businesses and artists who make the work possible.</span><span class="more">Our partners</span></a>
+        <a class="gv-card gv-pink" href="https://www.zeffy.com/"><b>Donate today</b><span>Every gift, any size, goes straight to survivors' workshops.</span><span class="btn dark">Give with Zeffy</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap rule pink">
+      <div class="head"><div><h2>Questions about giving</h2></div></div>
+      <div class="visit">
+        <div><small>Executive Offices</small><span>4267 Marina City Drive, PH6<br>Marina del Rey, CA 90292</span></div>
+        <div><small>Email</small><span>info@artistsfortrauma.org</span></div>
+        <div><small>Tel</small><span>424.500.2422</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+<div data-page="partners" hidden>
+  <section id="partners">
+    <div class="wrap rule">
+      <div class="head"><div><h2>Our Partners</h2><p style="color:var(--mute)">We partner with local to internationally established artists, businesses, municipalities, trauma hospitals, post-acute rehab facilities, all types of trauma support groups, non-profits, military resource centers and individual trauma survivors.</p></div><a class="more" href="https://artistsfortrauma.org/partners/">View Partners</a></div>
+      <div class="plogos">
+        <a href="https://artistsfortrauma.org/california-rehabilitation-institute/">California Rehabilitation Institute</a>
+        <a href="https://artistsfortrauma.org/grossman-burn-foundation/">Grossman Burn Foundation</a>
+        <a href="https://artistsfortrauma.org/grossman-burn-centers/">Grossman Burn Centers</a>
+        <a href="https://artistsfortrauma.org/lasky-clinic/">Lasky Clinic</a>
+      </div>
+      <div style="margin-top:clamp(28px,4vw,44px)"><div class="pgroups">
+      <div><h3>Medical</h3><ul><li>California Rehabilitation Institute</li><li>UCLA Health</li><li>Lasky Clinic &amp; Lasky Aesthetics</li><li>Grossman Burn Centers &amp; Foundation</li><li>UCLA Center for East-West Medicine</li><li>Ventura County Medical Center</li><li>Casa Colina Centers for Rehabilitation</li><li>Jodi House Brain Injury Support Center</li><li>California Society of Facial Plastic Surgeons</li></ul></div>
+      <div><h3>Community</h3><ul><li>Muhammad Ali Center</li><li>Louisville Slugger Museum &amp; Factory</li><li>City of Louisville</li><li>Macy's</li><li>Big Sunday</li><li>Los Angeles LGBT Center</li><li>Valley Cultural Center</li><li>Triumph Foundation</li><li>Pushrim Foundation</li><li>Military Connection</li><li>A Window Between Worlds</li><li>Veterans Park Conservancy</li></ul></div>
+      <div><h3>Artists</h3><ul><li>Shepard Fairey · OBEY GIANT</li><li>RISK</li><li>Eddie Donaldson · GuerillaOne</li><li>Jim Evans · TAZ</li><li>Tommy Hollenstein</li><li>The Seventh Letter</li><li>Karen Michelle</li><li>Smart Art</li><li>Moby Arts</li><li>Tracy Park Gallery</li><li>American Contemporary Ballet</li></ul></div>
+    </div></div>
+    </div>
+  </section>
+</div>
+<div style="height:clamp(56px,7vw,88px)"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div style="display:grid;gap:10px;align-content:start"><a class="logo" href="#top" aria-label="Athletes for Trauma home"><img class="logofull" src="images/ath_full.png" alt="Athletes for Trauma"></a><p style="color:#333;font-size:1.1rem">Where Recovery is an Art. Powered by human spirit<sup class="tm">TM</sup><br>#Creativity.Connectivity.Community</p></div>
+      <div><h4>About</h4><ul><li><a href="https://artistsfortrauma.org/lauras-story/">Laura's Story</a></li><li><a href="https://artistsfortrauma.org/team/">Team</a></li><li><a href="https://artistsfortrauma.org/partners/">Partners</a></li><li><a href="https://artistsfortrauma.org/mediapress/">Media/Press</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul><li><a href="https://artistsfortrauma.org/become-a-student-artist/">Become a Student</a></li><li><a href="https://artistsfortrauma.org/become-a-volunteer-artist/">Become a Volunteer</a></li><li><a href="https://artistsfortrauma.org/workshops/">Workshops</a></li><li><a href="https://artistsfortrauma.org/donate/">Donate</a></li></ul></div>
+      <div><h4>Stay Connected</h4><ul><li><a href="https://www.instagram.com/artistsfortrauma/">Instagram</a></li><li><a href="https://www.facebook.com/ArtistsforTrauma">Facebook</a></li><li><a href="https://www.youtube.com/user/ArtistsForTrauma">YouTube</a></li><li><a href="https://twitter.com/Artists4Trauma">X</a></li></ul></div>
+    </div>
+    <div class="legal"><span>Copyright © 2026 Artists For Trauma. All rights reserved. Artists For Trauma is a 501(c)(3) nonprofit organization, EIN 45-4624556.</span><span>Privacy policy · Terms of service</span></div>
+  </div>
+</footer>
+
+<script>
+const IMG = {"photo": "images/photo.jpg", "film": "images/film.jpg", "serve": "images/serve.jpg", "dance": "images/dance.jpg", "yoga2": "images/yoga2.jpg", "calm": "images/calm.jpg", "pottery": "images/pottery.jpg", "drawing": "images/drawing.jpg", "writing": "images/writing.jpg", "music": "images/music.jpg", "taichi": "images/taichi.jpg", "more": "images/more.jpg", "e2": "images/e2.jpg", "lfa_fight": "images/lfa_fight.jpg", "lm_tape": "images/lm_tape.jpg", "ch_young": "images/ch_young.jpg", "f_kent": "images/f_kent.jpg", "f_isaiah2": "images/f_isaiah2.jpg", "f_chantel": "images/f_chantel.jpg", "f_lfa": "images/f_lfa.jpg", "f_aaron": "images/f_aaron.jpg", "f_damon": "images/f_damon.jpg", "f_carlo": "images/f_carlo.jpg", "f_greg": "images/f_greg.jpg", "f_quan2": "images/f_quan2.jpg", "f_jonathan": "images/f_jonathan.jpg", "v_aaron": "images/v_aaron.jpg"};
+const PROGRAMS = [
+  ['Adaptive cycling','Hand cycles, trikes and road rides.',''],['Boxing & MMA','Pads, footwork and fight fitness.','lfa_fight'],['Running & wheelchair racing','From first mile to marathon day.','lm_tape'],
+  ['Strength training','Built around the body in front of us.',''],['Yoga','Movement matched to the body in front of us.','yoga2'],['Tai Chi','Slow form. Standing or seated.','taichi'],
+  ['Dance','Rhythm and whatever range is here today.','dance'],['Meditation','A guided pause for body and mind.','calm'],['And more','If it isn’t listed, ask.','more']];
+let filter = 'All programs';
+function cards(target, withImg){
+  target.innerHTML = PROGRAMS.map(([n,l,im]) => `<div class="pcard" data-p="${n}">${withImg ? (im ? `<div class="ph"><img src="${IMG[im]}" alt="${n} at AFT"></div>` : `<div class="ph ph-empty"><span>${n}</span><small>Photo to come</small></div>`) : ''}<h3>${n}</h3><p>${l}</p></div>`).join('');
+}
+
+const FEATURES = [
+  ['isaiah-ferguson','Isaiah Ferguson','“The Vanilla Gorilla”','ONI Fights 5 MMA · Main event · October 10, 2026','Get lean, get mean, and try to take it as far as I can.','f_isaiah2'],
+  ['chantel-navarro','Chantel Navarro','Chicanita: Sponsored by Athletes for Trauma','Professional boxer · WBC Youth World Bantamweight Champion','','f_chantel'],
+  ['lfa-235','LFA 235','Proud Sponsors of LFA 235','Louisville, Kentucky · Artists for Trauma & Athletes for Trauma','','f_lfa'],
+  ['aaron-baker','Aaron Baker','The Will to Rise','','','f_aaron'],
+  ['damon-bell','Damon Bell','“The Demon”: From the Other Side of the Cage','Athletes for Trauma presents · Oni Fights 5 MMA · October 10, 2026','Hard work never betrays you.','f_damon'],
+  ['carlo-kellem','Carlo Kellem','From Ringside to Regulation','The Boxing Commissioner · Oni Fights 5 MMA, Galt House Hotel, October 10, 2026','','f_carlo'],
+  ['greg-fante','Greg Fante','The Coach of Louisville','Laura Sharpe’s Athletes Profile · October 2026','','f_greg'],
+  ['quan-b','Quan.B','Rhythm & Roots','Faith · Family · Music · Former football player','','f_quan2'],
+  ['jonathan-floyd','Jonathan Floyd','A Rising Voice in Combat Sports','AFT exclusive interview · Beyond Fight Night','','f_jonathan'],
+  ['kent-seton','Kent Seton','Building Connection Across Business, Philanthropy and Human Potential','Lawyer · Former Professional Athlete · Founder of AthletesTouch · CEO & Chairman, Edward Charles Foundation','','f_kent']];
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const cover = ([id,n,d,,,im]) => `<a class="fcover" href="#feature-${id}" aria-label="${esc(n)}: ${esc(d)}"><img src="${IMG[im]}" alt="${esc(n)} magazine cover"><span class="cap"><span><b>${esc(n)}</b><small>${esc(d)}</small></span><i>→</i></span></a>`;
+document.getElementById('fwall').innerHTML = FEATURES.map(cover).join('');
+const home = document.getElementById('top'), fview = document.getElementById('fview');
+const pview = document.getElementById('pview');
+function route(){
+  const pg = location.hash.slice(1);
+  if (pg === 'press' || pg === 'partners' || pg === 'give') {
+    home.hidden = true; fview.hidden = true; pview.hidden = false;
+    pview.querySelectorAll('[data-page]').forEach(d => d.hidden = d.dataset.page !== pg);
+    window.scrollTo(0,0); return;
+  }
+  if (!pview.hidden) { pview.hidden = true; home.hidden = false; const el = location.hash && document.querySelector(location.hash); if (el) requestAnimationFrame(() => el.scrollIntoView({behavior:'instant'})); else window.scrollTo(0,0); }
+  const vm = location.hash.match(/^#video-(.+)$/);
+  const vk = vm ? VIDEOS.findIndex(v => v[0] === vm[1]) : -1;
+  if (vk >= 0) {
+    const [id,n,s,im] = VIDEOS[vk], L = VIDEOS.length, prev = VIDEOS[(vk+L-1)%L], next = VIDEOS[(vk+1)%L];
+    pview.hidden = true;
+    fview.innerHTML = `<div class="wrap"><a class="fback" href="#videos">← All videos</a>
+      <div style="display:grid;gap:18px;border-top:4px solid var(--pink);padding-top:20px;max-width:1040px">
+      <span class="eyebrow">AFT Films</span><h1 style="font-size:clamp(2.6rem,5vw,4.4rem);line-height:.92">${esc(n)}</h1><div class="dek" style="font:700 1.5rem var(--head);color:var(--pink-ink)">${esc(s)}</div>
+      <div class="vplayer"><img src="${IMG[im]}" alt=""><span>Video player goes here</span></div>
+      <div class="fnav"><a href="#video-${prev[0]}"><small>← Previous</small>${esc(prev[1])}</a><a href="#video-${next[0]}" style="text-align:right"><small>Next →</small>${esc(next[1])}</a></div>
+      </div></div>`;
+    home.hidden = true; fview.hidden = false; window.scrollTo(0,0); return;
+  }
+  const m = location.hash.match(/^#feature-(.+)$/);
+  const k = m ? FEATURES.findIndex(f => f[0] === m[1]) : -1;
+  if (k < 0) { if (!fview.hidden) { fview.hidden = true; home.hidden = false; const el = location.hash && document.querySelector(location.hash); if (el) requestAnimationFrame(() => el.scrollIntoView({behavior:'instant'})); } return; }
+  const [id,n,d,role,q,im] = FEATURES[k], L = FEATURES.length, prev = FEATURES[(k+L-1)%L], next = FEATURES[(k+1)%L];
+  pview.hidden = true;
+  fview.innerHTML = `<div class="wrap"><a class="fback" href="#features">← All features</a>
+    <article class="fpage"><div class="fc"><img src="${IMG[im]}" alt="${esc(n)} magazine cover"></div>
+    <div class="fbody"><span class="eyebrow">Laura Sharpe’s Athletes Profile</span><h1>${esc(n)}</h1><div class="dek">${esc(d)}</div>${role ? `<div class="role">${esc(role)}</div>` : ''}
+    ${q ? `<blockquote>“${esc(q)}”</blockquote>` : ''}
+    <div class="fslot">Feature video<small>Embed the reel or interview here</small></div>
+    <div class="fstory"><h3>The story</h3><p class="ph">Interview and story text go here: the full written feature, pull quotes and photos from the shoot.</p></div>
+    <div class="fnav"><a href="#feature-${prev[0]}"><small>← Previous</small>${esc(prev[1])}</a><a href="#feature-${next[0]}" style="text-align:right"><small>Next →</small>${esc(next[1])}</a></div>
+    </div></article></div>`;
+  home.hidden = true; fview.hidden = false; window.scrollTo(0,0);
+}
+addEventListener('hashchange', route); route();
+
+const VIDEOS = [['aaron-baker','Aaron Baker','The will to rise','v_aaron']];
+if (document.getElementById('vwall')) document.getElementById('vwall').innerHTML = VIDEOS.map(([id,n,s,im]) => `<a class="vcard" href="#video-${id}"><div class="ph"><img src="${IMG[im]}" alt="${esc(n)} video still"><span class="pl" aria-hidden="true"></span></div><div><b>${esc(n)}</b><small>${esc(s)}</small></div></a>`).join('');
+
+(() => {
+  const box = document.querySelector('#donate .dbox'); if (!box) return;
+  const go = box.querySelector('.dgo'); let amt = '$50', monthly = false;
+  const upd = () => { go.textContent = amt === 'Other' ? (monthly ? 'Give monthly with Zeffy' : 'Donate with Zeffy') : `Donate ${amt}${monthly ? ' a month' : ''} with Zeffy`; };
+  box.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return;
+    const g = b.parentElement; g.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    if (g.classList.contains('dfreq')) monthly = b.textContent === 'Monthly'; else amt = b.textContent; upd(); });
+})();
+cards(document.getElementById('pcards'), true);
+const chips = document.getElementById('chips');
+chips.innerHTML = ['All programs', ...PROGRAMS.map(p => p[0])].map(n => `<button type="button"${(n==='All programs'||n==='And more')?' class="pk"':''} aria-pressed="${n==='All programs'}">${n}</button>`).join('');
+function applyFilter(){
+  chips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', b.textContent === filter));
+  document.querySelectorAll('#pcards .pcard').forEach(c => c.hidden = !(filter === 'All programs' || c.dataset.p === filter));
+}
+chips.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; filter = b.textContent; applyFilter(); });
+applyFilter();
+document.getElementById('news-form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('news-status').hidden=false});
+document.getElementById('copy-em').addEventListener('click',e=>{const b=e.currentTarget;navigator.clipboard.writeText('info@artistsfortrauma.org').then(()=>{b.textContent='Copied'}).catch(()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('em'));const s=getSelection();s.removeAllRanges();s.addRange(r)})});
+</script>
+<script>
+(function(){var L=[].slice.call(document.querySelectorAll('nav.main a.n[href^="#"]'));
+function mark(h){L.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===h)})}
+L.forEach(function(a){a.addEventListener('click',function(ev){var h=a.getAttribute('href'),t=document.getElementById('top'),e=document.querySelector(h);if(!t||t.hidden||!e||e.closest('[hidden]'))return;ev.preventDefault();lock=Date.now();mark(h);history.pushState(null,'',h);scrollTo({top:h==='#top'?0:e.getBoundingClientRect().top+scrollY-90,behavior:'smooth'})})});
+var lock=0;
+addEventListener('hashchange',function(){var h=location.hash;if(/^#feature-/.test(h))h='#features';if(/^#video-/.test(h))h='#videos';mark(h||'#top')});
+var ids=['programs','features','videos','about','events'];
+addEventListener('scroll',function(){var t=document.getElementById('top');if(!t||t.hidden||Date.now()-lock<1500)return;var cur='#top',best=-1e9;ids.forEach(function(i){var e=document.getElementById(i);if(!e)return;var y=e.getBoundingClientRect().top;if(y<140&&y>best){best=y;cur='#'+i}});mark(cur)},{passive:true});
+mark(location.hash||'#top')})();
+</script>
+
+</html>
