@@ -568,19 +568,7 @@ nav.main .btn{background:#f1592a !important;color:#fff !important}nav.main .btn:
 <header>
   <div class="wrap bar">
     <a class="logo" href="#top" aria-label="Athletes for Trauma home"><img class="logomark" src="images/logomark.png" alt=""></a>
-    <nav class="main" aria-label="Main">
-      <a class="n" href="#top">Home</a>
-      <a class="n" href="#programs">Programs</a>
-      <a class="n" href="https://artists-for-trauma.netlify.app/">Artists for Trauma</a>
-      <a class="n" href="#features">Athletes</a>
-      <a class="n" href="#chantel">Stories</a>
-            <a class="n" href="#about">About</a>
-      <a class="n" href="#events">Events</a>
-      <a class="n" href="#press">Press</a>
-      <a class="n" href="#partners">Partners</a>
-      <a class="n ig" href="https://www.instagram.com/artistsfortrauma/">Instagram</a>
-      <a class="btn" href="#give">Give with Zeffy</a>
-    </nav>
+    <nav class="main" aria-label="Main"><button class="menubtn" aria-expanded="false" aria-controls="mainmenu">Menu</button><div class="menu" id="mainmenu"><a class="n" href="#top">Home</a><div class="dd"><a class="n" href="https://artists-for-trauma.netlify.app/about/" aria-haspopup="true">About<i aria-hidden="true">▾</i></a><div class="ddm"><a href="https://artists-for-trauma.netlify.app/about/">About</a><a href="https://artists-for-trauma.netlify.app/lauras-story/">Laura's Story</a><a href="https://artists-for-trauma.netlify.app/team/">Team</a></div></div><a class="n" href="#features">Features</a><a class="n" href="https://artists-for-trauma.netlify.app/partners/">Partners</a><div class="dd"><a class="n" href="https://artists-for-trauma.netlify.app/published-features/" aria-haspopup="true">Press/Media<i aria-hidden="true">▾</i></a><div class="ddm"><a href="https://artists-for-trauma.netlify.app/published-features/">Published Features</a><a href="https://artists-for-trauma.netlify.app/lyb-2021/">LYB 2021</a><a href="https://artists-for-trauma.netlify.app/videos/">Videos</a><a href="https://artists-for-trauma.netlify.app/mediapress/">Media/Press</a></div></div><div class="dd"><a class="n" href="https://artists-for-trauma.netlify.app/become-a-student-artist/" aria-haspopup="true">Get Involved<i aria-hidden="true">▾</i></a><div class="ddm"><a href="https://artists-for-trauma.netlify.app/become-a-student-artist/">Become a Student Artist</a><a href="https://artists-for-trauma.netlify.app/become-a-volunteer-artist/">Become a Volunteer</a><a href="https://artists-for-trauma.netlify.app/calendar/">Events</a><a href="https://artists-for-trauma.netlify.app/blog/">Blogs</a><a href="https://artists-for-trauma.netlify.app/workshops/">Workshops</a></div></div><a class="n" href="https://artists-for-trauma.netlify.app/contact/">Contact</a><a class="n" href="https://artists-for-trauma.netlify.app/digital-flyers-for-our-events/">Digital Flyers</a><a class="n" href="https://artists-for-trauma.netlify.app/">Artists for Trauma</a></div><a class="btn" href="#give">Give with Zeffy</a></nav>
   </div>
 </header>
 <script>
@@ -1057,4 +1045,31 @@ addEventListener('scroll',function(){var t=document.getElementById('top');if(!t|
 mark(location.hash||'#top')})();
 </script>
 
-</html>
+</html><style>
+/* main menu, old-site layout */
+nav.main{display:flex;align-items:center;gap:14px}
+nav.main .menu{display:flex;align-items:center;gap:clamp(12px,1.3vw,20px)}
+nav.main a.n{display:inline-flex !important;align-items:center;gap:4px;text-decoration:none;font-family:var(--head);font-weight:600;font-size:1.12rem;white-space:nowrap;color:inherit}
+nav.main a.n i{font-style:normal;font-size:.7em;opacity:.7}
+nav.main a.n:hover,nav.main .dd:hover>a.n{color:var(--pink-ink)}
+nav.main .dd{position:relative}
+nav.main .ddm{display:none;position:absolute;top:100%;left:-12px;min-width:230px;background:#fff;border:1px solid #d9d9d9;border-top:3px solid var(--pink);box-shadow:0 10px 24px rgba(0,0,0,.12);padding:6px 0;z-index:50}
+nav.main .dd:hover .ddm,nav.main .dd:focus-within .ddm{display:block}
+nav.main .ddm a{display:block;padding:9px 16px;text-decoration:none;font-family:var(--head);font-weight:600;font-size:1.05rem;color:#000;white-space:nowrap}
+nav.main .ddm a:hover{background:#f3f3ee;color:var(--pink-ink)}
+nav.main .menubtn{display:none;font:700 1.05rem var(--head);padding:9px 14px;border:2px solid #000;background:#fff;border-radius:2px;cursor:pointer}
+@media (max-width:1180px){
+  nav.main .menubtn{display:inline-flex}
+  nav.main .menu{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid #d9d9d9;box-shadow:0 14px 28px rgba(0,0,0,.14);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 18px;max-height:80vh;overflow:auto;z-index:60}
+  nav.main.open .menu{display:flex}
+  nav.main .menu a.n{padding:12px 0;border-bottom:1px solid #eee;font-size:1.25rem;box-shadow:none !important}
+  nav.main .dd{border-bottom:1px solid #eee}nav.main .dd>a.n{border-bottom:0;width:100%}
+  nav.main .dd .ddm{display:block;position:static;border:0;box-shadow:none;padding:0 0 8px 14px;min-width:0}
+  nav.main .dd .ddm a{padding:8px 0;font-size:1.1rem;color:#444}
+  nav.main a.n i{display:none}
+}
+</style>
+<script>(function(){var n=document.querySelector('nav.main'),b=n&&n.querySelector('.menubtn');if(!b)return;
+b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'Close':'Menu'});
+n.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='Menu'})});})();</script>
+
