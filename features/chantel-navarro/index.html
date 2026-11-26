@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en" data-theme="light" style="color-scheme:light">
+<head><meta name="color-scheme" content="light">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chantel Navarro · Features · Athletes for Trauma</title>
+<link rel="stylesheet" href="https://use.typekit.net/scq8iav.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Anton&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap">
+<style>
+/* Layout: clean AFT feature — white page, hairline rules, black type, uncropped photo breaks; colour only in site header/footer */
+:root{
+  --bg:#ffffff; --fg:#000000; --mute:#555555; --line:#d9d9d9; --soft:#f3f3ee;
+  --pink:#f567af; --pink-ink:#c93683;
+  --grad:#6e1720;--yel:#fff;
+  --head:"gotham-condensed","Barlow Condensed","Arial Narrow",sans-serif;
+  --sp:clamp(48px,6vw,80px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0d0e;--fg:#f5f2f3;--mute:#b3aaae;--line:#333;--soft:#1a1819;--pink-ink:#f78dc2;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0d0e;--fg:#f5f2f3;--mute:#b3aaae;--line:#333;--soft:#1a1819;--pink-ink:#f78dc2;color-scheme:dark}
+*{box-sizing:border-box}
+html{font-size:18px}
+body{background:var(--bg);color:var(--fg);font-family:var(--head);font-weight:500;font-size:24px;line-height:1.15}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--head);font-weight:700;line-height:.92;letter-spacing:-.01em;text-wrap:balance}
+img{display:block;width:100%;height:100%;object-fit:cover;border-radius:2px}
+.eyebrow{font-weight:600;font-size:1rem;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:700 1.15rem var(--head);text-decoration:none;padding:12px 24px;border-radius:2px;background:#000;color:#fff}
+.btn:hover{background:var(--pink);color:#000}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+
+/* header (same as home page) */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);box-shadow:0 1px 0 var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.bar .lm{height:56px;width:auto;object-fit:contain}
+.bar .lw{height:40px;width:auto;object-fit:contain}
+nav.main{display:flex;gap:clamp(14px,1.6vw,24px);align-items:center;margin-right:auto;margin-left:12px}
+nav.main a{text-decoration:none;font-weight:600;font-size:1.15rem}
+nav.main a:hover,nav.main a.on{text-decoration:underline;text-underline-offset:6px}
+@media (max-width:1140px){nav.main a.n{display:none}}
+@media (max-width:620px){.bar .lw{display:none}}
+
+/* hero */
+.crumb{font-size:1.05rem;color:var(--mute);padding-block:18px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--fg)}
+.hero{background:var(--grad);color:#000}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:stretch;padding-block:clamp(20px,2.6vw,32px)}
+.hero .txt{display:flex;flex-direction:column;justify-content:space-between;align-items:center;gap:20px;text-align:center;padding-block:4px}
+.hero .eyebrow{color:#000;font-size:clamp(1.1rem,1.9vw,1.5rem);letter-spacing:.04em}
+.hero h1{font-size:clamp(5rem,12.6vw,10.4rem);font-weight:800;text-transform:uppercase;line-height:.8;letter-spacing:-.01em}
+.hero h1 span{display:block;color:#fff}
+.hero .deck{font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:700;line-height:1.08}
+.hero .deck em{font-style:normal}
+.hero .credits{font-size:clamp(1rem,1.5vw,1.25rem);font-weight:500;display:flex;flex-wrap:wrap;gap:4px 10px;justify-content:center}
+.hero .credits b{font-weight:700}
+.hero .ph{aspect-ratio:1.18;max-width:100%}
+.hero .ph{overflow:hidden;border-radius:2px}
+.hero .ph img{object-position:center top;transform:scale(1.16);transform-origin:47% 82%}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero .txt{padding-bottom:0}}
+
+/* story */
+.story{padding-block:36px;display:grid;gap:36px}
+.col{max-width:760px;margin:0 auto;display:grid;gap:20px}
+.lede{font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;line-height:.95}
+
+.col h2{font-size:clamp(2.2rem,4vw,3rem);text-transform:uppercase;margin-top:8px;line-height:.89}
+.col h2:first-child{margin-top:0}
+.col h2 small{display:block;font-size:1rem;letter-spacing:.08em;color:#d9461a;margin-bottom:8px}
+figure{margin:0;display:grid;gap:8px;min-width:0}
+figcaption{font-size:1rem;color:var(--mute);font-weight:600}
+.wide{max-width:1240px;width:100%}
+.g{display:grid;gap:6px}
+.story>.g+.g{margin-top:-30px}
+.story>.g+.wrap.wide:has(.pq.boxed),.story>.wrap.wide:has(.pq.boxed)+.g{margin-top:-30px}
+/* Side caption: runs up the left edge of its photo, outside the frame, so the photo bottoms line up */
+.g figure:has(figcaption.side){position:relative}
+.g figcaption.side{position:absolute;left:0;bottom:0;margin:0;white-space:nowrap;line-height:1.2;transform-origin:0 100%;transform:rotate(-90deg) translateY(-8px)}
+@media (max-width:760px){.g figcaption.side{position:static;transform:none;margin:6px 0 0}}
+/* Pull quotes on white-backdrop studio shots sit in a box in the cover colour, so the photo is anchored, like the opening box */
+.pq.boxed{background:var(--grad);padding:clamp(20px,3.4vw,48px);padding-block:clamp(20px,2.6vw,32px);border-radius:2px}
+.pq.boxed.ir,.pq.boxed.il{padding-left:clamp(20px,3.4vw,48px);padding-right:clamp(20px,3.4vw,48px)}
+.pq.boxed blockquote{color:#fff!important}.pq.boxed cite{color:#000!important}
+/* Ono: cut-out studio portraits stand on the cover yellow, whole figure in view */
+.boxed figure{background:none;aspect-ratio:4/5;min-height:0}
+/* Photos stand on the bottom edge of their yellow box, like the cover */
+.pq.boxed{padding-bottom:0}.pq.boxed figure{align-self:end}
+.g.boxed{padding-bottom:0!important;align-items:end}
+/* Photos may run past their frame anywhere inside the yellow box; the box edge is the only crop */
+.pq.boxed,.g.boxed{overflow:hidden}.pq.boxed .q{position:relative;z-index:1}.boxed figure,.boxed .crop,.boxed .tunewrap{overflow:visible!important}
+/* Opening photo runs edge to edge, top and bottom */
+.hero.full .wrap{padding-block:0}.hero.full .ph{align-self:stretch;aspect-ratio:auto;min-height:640px;height:100%}
+.hero .txt{padding-bottom:32px}
+.hero.full .ph{overflow:visible}.hero.full{overflow:hidden}.hero.full .ph img{position:relative;top:var(--hero-down,40px)}
+.boxed figure .crop{height:100%}
+.boxed figure img{width:100%;height:100%;object-fit:contain;object-position:50% 100%}
+.g.boxed{background:var(--grad);padding:clamp(20px,2.6vw,32px) clamp(20px,3.4vw,48px)}
+.g.boxed figure{aspect-ratio:3/4}
+.pq figure:has(figcaption.side){position:relative}
+.pq figcaption.side{position:absolute;left:0;bottom:0;margin:0;white-space:nowrap;line-height:1.2;transform-origin:0 100%;transform:rotate(-90deg) translateY(-8px);color:#000}
+.hl{background:var(--grad);color:#fff;font-weight:700;padding:10px 14px;margin-inline:-14px}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,38%);gap:22px;align-items:start}.duo>div{display:grid;gap:inherit;align-content:start}.col figure.inset{margin:4px 0 0}.col figure.inset img{width:100%;display:block;border-radius:2px}.col figure.inset figcaption{font-size:.9rem;margin-top:6px;font-weight:600}
+@media (max-width:600px){.duo{grid-template-columns:1fr}}
+@media (max-width:820px){.hero h1{font-size:min(var(--name-size),12.5vw) !important}}
+/* Phones: the pixel nudges were set on a desktop screen, so photos go back to their plain framing */
+@media (max-width:760px){.boxed figure img,.hero.full .ph img{transform:none!important;clip-path:none!important}.hero.full .ph img{width:100%;object-fit:cover}.pq figcaption.side{display:none}
+.hero.full .wrap{grid-template-columns:minmax(0,1fr)}.hero.full .ph{min-height:0;height:auto;aspect-ratio:4/5}
+.pq.boxed figure,.g.boxed figure{display:block;aspect-ratio:4/5!important;min-height:0}.boxed figure .crop{display:block;height:100%;overflow:hidden!important}.boxed figure img{width:100%;height:100%}.pq.boxed{padding:20px 20px 0}.pq.boxed .q{padding:0 0 20px}}
+@media (min-width:761px){.pq.boxed .q{align-self:center;padding-top:0}}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g .t{aspect-ratio:3/4}.g .l{aspect-ratio:4/3}.g .s{aspect-ratio:1}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3 figure:first-child{grid-column:1/-1}}
+
+.uncrop{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.uncrop figure{flex:0 1 auto}
+.uncrop img{width:auto;height:auto;max-height:560px;max-width:100%;object-fit:contain}
+@media (max-width:760px){.uncrop figure{flex:1 1 40%}.uncrop img{width:100%;max-height:none}}
+/* stats band */
+.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-block:0}
+.stats b{display:block;font-size:clamp(2.4rem,4.3vw,3.6rem);font-weight:700;line-height:.9}
+.stats span{font-size:1.1rem;font-weight:500;display:block;margin-top:8px;color:var(--mute)}
+@media (max-width:760px){.stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* quotes */
+.pq{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;align-items:center}
+.pq .q{padding:clamp(24px,4vw,56px);display:grid;align-content:center;gap:16px}
+
+
+
+.pq blockquote{margin:0;font-size:clamp(1.7rem,3.1vw,2.7rem);font-weight:700;line-height:.95}
+.pq cite{font-style:normal;font-weight:500;font-size:1.3rem;color:var(--mute)}
+.pq figure{min-height:340px}
+
+.pq.il{grid-template-columns:minmax(0,48%) minmax(0,1fr);padding-left:clamp(0px,5vw,64px)}
+.pq.il .q{padding-left:clamp(20px,2.6vw,32px);padding-right:clamp(16px,2vw,24px)}
+.pq.ir{grid-template-columns:minmax(0,1fr) minmax(0,46%);padding-right:clamp(0px,6vw,72px)}
+.pq.ir .q{padding-left:clamp(24px,6vw,76px);padding-right:32px;justify-self:end;width:fit-content;max-width:100%}
+.pq.il .q{padding-left:32px}
+.pq figure{min-height:0}
+.pq blockquote.long{font-size:clamp(1.6rem,2.9vw,2.45rem);font-weight:700;line-height:.95}
+@media (min-width:1100px){.pq blockquote.two span{display:block;white-space:nowrap}}
+.pq figure img{height:auto}
+@media (min-width:601px){.col h2.one{white-space:nowrap}}
+/* Pull quotes: photos inset equally from both edges, same width; quotes start the same distance below the photo top */
+.pq.il{grid-template-columns:minmax(0,47%) minmax(0,1fr);padding-left:clamp(0px,6vw,72px)}
+.pq.ir{grid-template-columns:minmax(0,1fr) minmax(0,47%);padding-right:clamp(0px,6vw,72px)}
+@media (min-width:761px){.pq .q,.pq.up .q{align-self:start;padding-top:150px}}
+@media (max-width:760px){.pq .q,.pq.up .q,.wrap.col,.wrap.big,.lede,.col h2,.hero .eyebrow,.hero h1,.hero .deck,.hero .credits,.hero .txt{top:0 !important;left:0 !important}.pq.up .q{padding-top:clamp(24px,4vw,56px)}}
+@media (max-width:760px){.pq,.pq.il,.pq.ir{grid-template-columns:1fr;padding:0}.pq.ir .q{padding-left:24px}.pq.ir figure{order:-1}.pq figure{min-height:0;aspect-ratio:4/3}}
+.big{text-align:center;max-width:760px;width:100%;margin:0 auto;display:grid;gap:14px}
+.big blockquote{margin:0;font-size:clamp(2.2rem,5.6vw,4.4rem);font-weight:700;line-height:.95;text-transform:uppercase}
+@media (min-width:1100px){.big blockquote span{display:block;white-space:nowrap}}
+.big blockquote.nofit{font-size:clamp(2rem,3.6vw,3rem);line-height:1;text-wrap:balance}.big blockquote.nofit span{display:block;white-space:normal}
+
+.crop{display:block;overflow:hidden;border-radius:2px}
+.story .lede,.story h2,.pq blockquote,.inline,.big blockquote,.basics b{font-weight:600;-webkit-text-stroke:.4px currentColor}
+.col h2 small{-webkit-text-stroke:0}
+.col h2{text-transform:none;font-size:clamp(2.4rem,4.4vw,3.3rem);line-height:.95}
+.col h2 small{text-transform:uppercase}
+.book{font-style:italic;font-weight:700}
+.big cite{font-style:normal;font-size:1.1rem;color:var(--mute);font-weight:500}
+.inline{border-left:3px solid var(--fg);padding:4px 0 4px 22px;font-size:1.6rem;font-weight:700;line-height:1.08}
+
+/* closing */
+.closing{position:relative;width:calc(100% - 40px);max-width:1200px;margin:0 auto;aspect-ratio:2.65;min-height:300px;display:grid;align-items:start;color:#fff;background:#222;border-radius:2px;overflow:hidden}
+.closing img{position:absolute;inset:0;border-radius:0}
+.closing::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(0,0,0,0) 55%)}
+.closing .wrap{position:relative;z-index:1;padding:clamp(20px,3vw,32px);display:grid;gap:10px;width:100%;max-width:none}
+.closing blockquote{margin:0;max-width:520px;font-size:clamp(1.7rem,3.3vw,2.9rem);font-weight:700;line-height:.95}
+.closing cite{font-style:normal;font-weight:600;font-size:1.1rem}
+
+@media (max-width:760px){
+.closing{aspect-ratio:auto;min-height:0;background:none;color:var(--fg);display:block;overflow:visible}
+.closing img{position:static;aspect-ratio:2.67;height:auto;border-radius:2px}
+.closing::after{display:none}
+.closing .wrap{padding:16px 0 0}
+.closing cite{color:var(--mute)}
+}
+/* credits + more */
+.credbox{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;gap:10px 40px;font-size:1.1rem}
+.credbox b{display:block;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.more{display:grid;gap:22px}
+.more .head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.more h2{font-size:clamp(2.2rem,4vw,3rem);text-transform:uppercase;line-height:.89}
+.more .all{font-weight:700;font-size:1.15rem;text-decoration:none}.more .all::after{content:" →"}
+.rack{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.rack a{aspect-ratio:3/4;display:block;transition:transform .15s}
+.rack a:hover{transform:translateY(-4px)}
+@media (max-width:760px){.rack{grid-template-columns:repeat(3,minmax(0,1fr))}.rack a:nth-child(n+4){display:none}}
+.give .wrap{border-top:1px solid var(--line)}
+.give .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;padding-block:36px}
+.give h2{font-size:clamp(2rem,3.6vw,2.8rem);line-height:.89}
+.give p{font-size:1.2rem;margin-top:8px;max-width:52ch;color:var(--mute)}
+footer{background:#f2f2f2;color:#000}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding-block:32px}
+footer img{height:44px;width:auto;object-fit:contain}
+footer p{font-weight:700;font-size:1.15rem}
+footer p span{color:#fff;white-space:nowrap}
+footer p span{color:#6e1720}
+/* Chelsie Hill: hero shows the cover portrait; colours from the cover (taupe band, cream title page) */
+.hero.full .ph{aspect-ratio:4/5}.hero.full .ph img{transform:none;object-position:50% 100%;height:100%;width:100%;object-fit:contain}
+/* Opening box: name set like the V7 cover (Gotham via Montserrat stand-in); other lines in the site font; cover colours.
+   Spacing and sizes are variables so they can be tuned in one place. */
+.hero{--cov:"aktiv-grotesk","Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --gap-eyebrow:24px;--gap-name:18px;--gap-deck:40px;--name-ls:-0.03em;--name-size:6.6rem;--name-lh:0.88;--deck-size:1.9rem;--deck-lh:1.05;--deck-gap:20px;--gap-top:56px;--txt-scale:1;--eyebrow-size:1.3rem;--credits-size:1.25rem;--sub-gap:6px}
+/* Whole cover text block scales together; profile line and credits sized separately */
+.hero .txt{zoom:var(--txt-scale)}.hero .eyebrow{font-size:var(--eyebrow-size)}.hero .credits{font-size:var(--credits-size)}
+.hero{color:#fff}
+.hero .txt{justify-content:flex-start;gap:0;padding-top:var(--gap-top)}
+.hero .eyebrow{color:#fff;margin-bottom:var(--gap-eyebrow)}
+.hero h1{font-family:var(--cov);font-weight:700;color:#fff;letter-spacing:var(--name-ls);display:block;text-align:center;line-height:var(--name-lh);font-size:min(var(--name-size),10vw);margin-bottom:var(--gap-name)}
+.hero h1 span{color:#fff;display:block;text-align:center}.hero h1 .plus{font-style:normal;color:#000}.hero h1 span.x{color:#000}.hero h1 span.x{display:block}.hero h1{text-transform:none!important}
+.hero .deck{color:#fff;font-weight:600;font-size:min(var(--deck-size),3.4vw);line-height:var(--deck-lh);margin-bottom:var(--gap-deck)}
+.hero .deck b{display:block;color:#000;font-family:var(--cov);font-weight:700;letter-spacing:-.04em;margin-bottom:var(--deck-gap)}
+.hero .credits{color:#fff}
+/* Cover photo: whole frame shown, free to zoom and move anywhere inside the box (box edge is the crop) */
+.hero.full .ph{overflow:visible;display:flex;justify-content:center;align-items:flex-end;position:relative;z-index:1}.hero.full .ph img{width:auto;max-width:none;height:100%;object-fit:contain;object-position:50% 100%;top:0;transform-origin:50% 100%}
+/* Cover text always sits in front of the photo */
+.hero .txt{position:relative;z-index:2}
+/* Tobias: the cover JPEG is the whole opening box (title and taglines are part of the design) */
+.hero.cover .wrap{display:flex;justify-content:center;align-items:stretch}.hero.cover .ph{flex:0 0 auto;height:100%;display:flex;justify-content:center}
+.hero.cover .ph img{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:50% 50%}
+@media (max-width:820px){.hero h1{font-size:min(var(--name-size),20vw)}.hero .deck{font-size:min(var(--deck-size),7.4vw)}}
+/* Bold display text in the article in the box mauve */
+.story .lede,.story h2,.pq blockquote,.inline,.big blockquote,.basics b{color:#000}
+.inline{border-left-color:var(--yel)}
+.col h2 small{color:#000;font-size:1.25rem;letter-spacing:.06em;margin-bottom:6px}
+.big cite{color:#000;font-weight:700;font-size:1.6rem}
+.basics .wrap{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px 24px;padding-block:0}
+.basics .grp{grid-column:span 3;font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:6px}
+.basics b{display:block;font-size:clamp(3rem,5vw,4.2rem);font-weight:700;line-height:.9}
+.basics span{font-size:1.2rem;font-weight:500;display:block;margin-top:6px;color:var(--mute)}
+@media (max-width:760px){.basics .wrap{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.story>.wrap.col:first-child,.story>.wrap.big{margin-bottom:0 !important}}
+@media (min-width:601px){}
+/* Closing quote in a box in the cover colours, set left like the boxed quotes */
+.big.boxq{background:var(--grad);text-align:left;padding:clamp(24px,3vw,36px) 34px;max-width:788px;justify-items:start}
+.big.boxq blockquote{color:#fff!important;text-transform:none;line-height:.95}.big.boxq cite{color:#000!important}
+.col p.cap{font-size:1rem;color:var(--mute);font-weight:600;margin:0}
+/* Credits set on the cover, under the name, in the cover's font */
+.hero.cover .ph{position:relative}
+.hero.cover .credits.cov{position:absolute;left:0;top:0;z-index:3;display:flex;flex-direction:column;gap:.15em;align-items:flex-start;font-family:"Poppins",sans-serif;font-weight:500;font-size:var(--covfs,1rem);transform:translate(var(--covx,0),var(--covy,0));line-height:1.15;color:#fff;text-align:left;margin:0}
+.hero.cover .credits.cov b{font-weight:700}
+.story>.wrap.col{width:100%;box-sizing:border-box}
+/* Tommy: cover image left, verse and credits on the orange to its right */
+.hero.cover.tw .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:center;gap:clamp(24px,4vw,64px);padding:0 0 0 clamp(24px,5vw,72px)}.hero.cover.tw .side{color:#fff;order:-1}
+.hero.cover.tw .ph{height:auto;aspect-ratio:auto;min-height:0;display:block}.hero.cover.tw .ph img{width:100%;height:auto;max-width:none;display:block}
+.hero.cover.tw{--txt-scale:1.15;--vs:4.65rem;--vlh:0.94;--vls:0.005em;--vgap:11px;--rs:1.5rem;--cgap:57px;--credits-size:1.35rem;--sidew:90%}
+.hero.cover.tw .side{zoom:var(--txt-scale);width:var(--sidew);display:flex;flex-direction:column;align-items:flex-start;text-align:left;color:#000}
+.hero.cover.tw .verse{font-family:"Anton",sans-serif;font-weight:400;font-size:min(var(--vs),5.2vw);line-height:var(--vlh);letter-spacing:var(--vls);margin:0;color:#fff;text-wrap:balance}
+.hero.cover.tw .ref{color:#e9bac5!important;font-family:"Anton",sans-serif;font-weight:400;font-size:min(var(--rs),3.2vw);line-height:1;margin:var(--vgap) 0 0;color:#fff;letter-spacing:.02em}
+.hero.cover.tw .credits{margin-top:var(--cgap);display:flex;flex-direction:column;gap:4px;font-size:var(--credits-size);color:#fff}.hero.cover.tw .credits b{color:#e9bac5}.hero.cover.tw .credits span{color:#fff}
+@media (max-width:820px){.hero.cover.tw .wrap{grid-template-columns:1fr;padding:0 0 28px}.hero.cover.tw .side{order:0}.hero.cover.tw .side{padding:28px 24px 0;zoom:1;width:auto;top:0!important;left:0!important}.hero.cover.tw .verse{font-size:9vw}.hero.cover.tw .ref{font-size:6vw}}
+.pq.boxed cite,.big.boxq cite{color:#e9bac5!important}
+.hero.cover.tw{background:#6e1720}
+.boxed figure img{object-fit:cover!important}
+.banner{padding-inline:clamp(12px,1.6vw,24px)}
+.pq.boxed.photo{padding:clamp(20px,2.6vw,32px)!important;align-items:center}.pq.boxed.photo figure{aspect-ratio:var(--ar)!important;align-self:center!important}.pq.boxed.photo figure .crop{height:100%}.pq.boxed.photo figure img{width:100%;height:100%;object-fit:cover;top:0!important}
+@media (min-width:761px){.pq.boxed.photo.ir{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)!important}.pq.boxed.photo.ir figure{order:2}}
+.pq.boxed.photo.ir figure .crop{overflow:hidden!important}
+/* tighter editorial spacing */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.story{gap:24px!important}
+.story>.g+.g,.story>.g+.wrap.wide:has(.pq.boxed),.story>.wrap.wide:has(.pq.boxed)+.g{margin-top:-18px!important}
+@media (min-width:821px){.hero.cover.tw.flip .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);padding:0 clamp(24px,5vw,72px) 0 0}.hero.cover.tw.flip .side{order:1}}
+.story>.g figure{overflow:hidden}
+</style>
+
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a href="#top" aria-label="Athletes for Trauma home"><img class="lm" src="/features/chantel-navarro/img/logomark.png" alt=""></a>
+    <nav class="main" aria-label="Main">
+      <a class="n" href="/">Home</a>
+      <a class="n" href="/#programs">Programs</a>
+      <a class="n on" href="/#features">Features</a>
+      <a class="n" href="/#videos">Videos</a>
+      <a class="n" href="/#about">About</a>
+      <a class="n" href="/#events">Events</a>
+      <a class="btn" href="https://www.zeffy.com/" style="background:var(--pink);color:#000">Give with Zeffy</a>
+    </nav>
+    <img class="lw" src="/features/chantel-navarro/img/logoword.png" alt="Athletes For Trauma">
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap crumb"><a href="/">Home</a> / <a href="/#features">Features</a> / Chantel Navarro</div>
+
+  <section class="hero full cover tw flip">
+    <div class="wrap">
+      <div class="ph"><img src="/features/chantel-navarro/img/hero.jpg" alt="Chantel Navarro. Sponsored by Athletes for Trauma"></div>
+      <div class="side" style="position:relative;top:-19px;left:0px">
+        <p class="verse">“Chicanita”</p>
+        <p class="ref">Sponsored by Athletes for Trauma</p>
+        <div class="credits"><span><b>Design</b> Per Bernal</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="story">
+    <div class="wrap col" style="position:relative;top:-7px;margin-bottom:-7px">
+      <p class="lede">Athletes for Trauma, AFT, is proud to announce its sponsorship of professional boxer Chantel Navarro, seven-time U.S. National Amateur Champion and WBC Youth World Bantamweight Champion.</p>
+      <p>She headlines The Butterfly Brawl, hosted by FightBook at the Santa Monica Pier on August 22, 2026.</p>
+    </div>
+
+    <div class="wrap wide g g1">
+      <figure><span class="crop"><img loading="lazy" src="/features/chantel-navarro/img/belt.jpg" alt="Chantel Navarro in the ring with her WBC Youth World Champion belt" style="aspect-ratio:2000/1741;object-position:50% 50%"></span></figure>
+    </div>
+
+    <div class="wrap col">
+      <h2><small>The sponsorship</small>A rising star</h2>
+      <p>At 22 years old, Chantel is one of the brightest rising stars in women’s boxing. She exemplifies the perseverance, discipline &amp; determination that AFT is proud to champion.</p>
+      <p>This sponsorship reflects the growing collaboration between AFT and TRUST Agency’s founder, Eddie Donaldson, who helped connect AFT with Chantel and the Butterfly Brawl as part of a shared commitment to supporting athletes both inside and outside the ring.</p>
+    </div>
+
+    <div class="wrap wide g g2" style="grid-template-columns:minmax(0,0.947fr) minmax(0,0.647fr)">
+      <figure><span class="crop"><img loading="lazy" src="/features/chantel-navarro/img/bw1.jpg" alt="Chantel Navarro celebrating in the ring" style="aspect-ratio:1894/2000;object-position:50% 50%"></span></figure>
+      <figure><span class="crop"><img loading="lazy" src="/features/chantel-navarro/img/bw2.jpg" alt="Chantel Navarro with her arm raised by the referee" style="aspect-ratio:1294/2000;object-position:50% 50%"></span></figure>
+    </div>
+
+    <div class="wrap big boxq">
+      <blockquote class="nofit" style="text-wrap:balance"><span>Perseverance, discipline &amp; determination.</span></blockquote>
+    </div>
+
+    <div class="wrap col">
+      <h2><small>Ignacio “Nacho” Navarro</small>A family lineage</h2>
+      <p>Chantel Navarro began boxing at 12 years old after hearing stories from her father, former professional boxer Ignacio “Nacho” Navarro, about his career in the ring.</p>
+      <p>Although her parents were initially hesitant, they eventually supported her passion, and her father continues to coach her today.</p>
+    </div>
+
+    <div class="wrap wide">
+      <div class="pq ir boxed photo" style="--ar:2000/1274">
+        <figure><span class="crop"><img loading="lazy" src="/features/chantel-navarro/img/flag.jpg" alt="Chantel Navarro in pink gloves and a U.S. flag headband" style="object-position:50% 62%;transform-origin:50% 62%;transform:translate(-9px, 0px) scale(1.06)"></span></figure>
+        <div class="q" style="position:relative;top:33px;left:-43px"><blockquote class="long" style="text-wrap:balance">“She is the first woman in her family’s long boxing lineage to compete professionally, carrying forward a tradition that spans multiple generations.”</blockquote></div>
+      </div>
+    </div>
+
+    <div class="wrap col">
+      <h2><small>Chantel Navarro</small>Fight file</h2>
+      <p><b>Nickname:</b> “Chicanita”<br><b>Division:</b> Bantamweight<br><b>Hometown:</b> Glendale, California<br><b>Professional record:</b> 8-0<br><b>Amateur accomplishments:</b> Seven-time U.S. National Champion<br><b>Current title:</b> World Boxing Council (WBC) Youth World Female Bantamweight Champion<br><b>Olympic experience:</b> Competed for a spot on Team USA at the 2024 U.S. Olympic Team Trials</p>
+    </div>
+
+    <div class="wrap wide g g1">
+      <figure><span class="crop"><img loading="lazy" src="/features/chantel-navarro/img/silver.jpg" alt="Chantel Navarro flexing in silver boxing gloves" style="aspect-ratio:2000/1272;object-position:50% 50%"></span></figure>
+    </div>
+
+    <div class="wrap col">
+      <h2><small>Professional promotion</small>Wise Owl Boxing</h2>
+      <p>In 2026 Chantel signed with Wise Owl Boxing, joining world-ranked contender Brandon Adams, Olympic standout Charles Conwell, and Mexican Olympian Brianda Tamara Cruz.</p>
+    </div>
+
+    <div class="wrap wide g g1">
+      <figure><span class="crop"><img loading="lazy" src="/features/chantel-navarro/img/pads.jpg" alt="Chantel Navarro training on the pads, with the Mexican flag behind her" style="aspect-ratio:2000/1519;object-position:50% 50%;transform-origin:50% 50%;transform:translate(0px, -14px) scale(1)"></span></figure>
+    </div>
+
+    <div class="wrap col" style="position:relative;top:-8px;margin-bottom:-8px">
+      <p class="hl">AFT is looking forward to featuring Chantel in an exclusive interview, celebrating the next chapter of her professional career, and honoring the mentorship and lasting impact of women in competitive sport.</p>
+    </div>
+
+    <div class="wrap col">
+      <div class="credbox">
+        <div><b>Series</b>Laura Sharpe's Athletes Profile</div>
+        <div><b>Design</b>Per Bernal</div>
+        <div><b>Follow</b>@athletesfortrauma</div>
+      </div>
+    </div>
+    <div class="wrap more">
+      <div class="head"><h2>More features</h2><a class="all" href="/#features">See all features</a></div>
+      <div class="rack">
+        <a href="/features/isaiah-ferguson/" aria-label="Isaiah Ferguson"><img loading="lazy" src="/features/chantel-navarro/img/f_isaiah2.jpg" alt=""></a>
+        <a href="https://artists-for-trauma.netlify.app/features/damon-bell/" aria-label="Damon Bell"><img loading="lazy" src="/features/chantel-navarro/img/f_damon.jpg" alt=""></a>
+        <a href="https://artists-for-trauma.netlify.app/features/carlo-kellem/" aria-label="Carlo Kellem"><img loading="lazy" src="/features/chantel-navarro/img/f_carlo.jpg" alt=""></a>
+        <a href="https://artists-for-trauma.netlify.app/features/greg-fante/" aria-label="Greg Fante"><img loading="lazy" src="/features/chantel-navarro/img/f_greg.jpg" alt=""></a>
+        <a href="https://artists-for-trauma.netlify.app/features/kent-seton/" aria-label="Kent Seton"><img loading="lazy" src="/features/chantel-navarro/img/f_kent.jpg" alt=""></a>
+      </div>
+    </div>
+  </div>
+
+  <section class="give">
+    <div class="wrap">
+      <div><h2>Be part of the story.</h2><p>Every survivor’s journey is bigger than one injury, one loss, one setback. Athletes for Trauma is here to help support that journey through creativity, connectivity, and community.</p></div>
+      <a class="btn" href="https://www.zeffy.com/">Give with Zeffy</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img loading="lazy" src="/features/chantel-navarro/img/logoword.png" alt="Athletes For Trauma">
+    <p>Where Recovery is an Art. Powered by <span>human spirit™</span></p>
+  </div>
+</footer>
+
+<script>
+/* Fit big pull-quote lines to the article text width */
+(function(){
+  function fit(){
+    document.querySelectorAll('.big blockquote:not(.nofit)').forEach(function(q){
+      q.style.fontSize='';q.style.width='';
+      if(window.innerWidth<1100) return;
+      var spans=q.querySelectorAll('span');if(!spans.length) return;
+      var max=0;spans.forEach(function(s){var r=document.createRange();r.selectNodeContents(s);max=Math.max(max,r.getBoundingClientRect().width)});
+      var target=0;var big=q.closest('.big');[big.previousElementSibling,big.nextElementSibling].forEach(function(c){if(c)c.querySelectorAll('p').forEach(function(p){var r=document.createRange();r.selectNodeContents(p);[].forEach.call(r.getClientRects(),function(b){target=Math.max(target,b.width)})})});
+      target=Math.min(target||q.parentElement.getBoundingClientRect().width,q.parentElement.getBoundingClientRect().width);
+      if(max>0){var fs=parseFloat(getComputedStyle(q).fontSize);q.style.fontSize=(fs*target/max).toFixed(1)+'px';q.style.width=target.toFixed(0)+'px'}
+    });
+  }
+  function snug(){
+    document.querySelectorAll('.pq.ir .q').forEach(function(q){
+      q.style.transform='';
+      if(window.innerWidth<761) return;
+      var R=0;q.querySelectorAll('blockquote,cite').forEach(function(e){var r=document.createRange();r.selectNodeContents(e);[].forEach.call(r.getClientRects(),function(b){if(b.width>2)R=Math.max(R,b.right)})});
+      var img=q.parentElement.querySelector('figure').getBoundingClientRect();
+      var shift=img.left-32-R;if(shift>0.5)q.style.transform='translateX('+shift.toFixed(1)+'px)';
+    });
+  }
+  var _fit=fit;fit=function(){_fit();snug()};
+  window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fit)}
+  fit();
+})();
+</script>
+
+<script src="/features/tune.js" defer></script>
+</body>
+</html>
