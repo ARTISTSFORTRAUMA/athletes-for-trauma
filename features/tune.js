@@ -60,6 +60,7 @@
     Object.keys(col).forEach(function(s){out.push(K.filter(function(k){return k[1]===s})[0][0]+' colour: '+col[s])});
     Object.keys(done).forEach(function(n){var v=done[n];out.push('Photo '+n+': zoom '+v.z+', left/right '+v.x+'%, up/down '+v.y+'%, move up/down '+(v.my||0)+'px, move left/right '+(v.mx||0)+'px, brightness '+v.br+', contrast '+v.ct+', highlights '+v.hl+', shadows '+v.sh+', saturation '+v.sa+', warmth '+v.wa+', crop left '+(v.kl||0)+'%, crop right '+(v.kr||0)+'%, crop top '+(v.kt||0)+'%, crop bottom '+(v.kb||0)+'%')});
     Object.keys(tdone).forEach(function(n){var v=tdone[n];out.push('Text '+n+': up/down '+v.y+'px, left/right '+v.x+'px')});
+    document.querySelectorAll('figure[data-resize]').forEach(function(f){out.push('Resizable photo '+f.dataset.resize+': width '+Math.round(f.getBoundingClientRect().width)+'px')});
     var t=out.join('\n');
     (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied. Paste it in the chat.'},function(){prompt('Copy these settings:',t)});
   };
@@ -143,3 +144,5 @@
   p.querySelector('.min').onclick=function(){p.classList.toggle('c')};
   document.body.appendChild(p);
 })();
+
+;(function(){if(!/[?&]tune/.test(location.search))return;document.querySelectorAll('figure[data-resize]').forEach(function(f){f.style.resize='horizontal';f.style.overflow='hidden';f.style.maxWidth='100%';f.style.minWidth='120px';f.style.outline='2px dashed rgba(0,0,0,.35)';f.title='Drag the bottom-right corner to resize'})})();
