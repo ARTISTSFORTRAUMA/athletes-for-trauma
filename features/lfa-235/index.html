@@ -250,7 +250,7 @@ footer p span{color:#c9840e}
 /* Tommy: cover image left, verse and credits on the orange to its right */
 .hero.cover.tw .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:center;gap:clamp(24px,4vw,64px);padding:0 0 0 clamp(24px,5vw,72px)}.hero.cover.tw .side{color:#fff;order:-1}
 .hero.cover.tw .ph{height:auto;aspect-ratio:auto;min-height:0;display:block}.hero.cover.tw .ph img{width:100%;height:auto;max-width:none;display:block}
-.hero.cover.tw{--txt-scale:1;--vs:3.2rem;--vlh:1.02;--vls:0em;--vgap:18px;--rs:1.5rem;--cgap:40px;--credits-size:1.25rem;--sidew:100%}
+.hero.cover.tw{--txt-scale:1.21;--vs:3.55rem;--vlh:0.98;--vls:0em;--vgap:26px;--rs:1.65rem;--cgap:30px;--credits-size:1.45rem;--sidew:100%}
 .hero.cover.tw .side{zoom:var(--txt-scale);width:var(--sidew);display:flex;flex-direction:column;align-items:flex-start;text-align:left;color:#000}
 .hero.cover.tw .verse{font-family:"Anton",sans-serif;font-weight:400;font-size:min(var(--vs),5.2vw);line-height:var(--vlh);letter-spacing:var(--vls);margin:0;color:#fff;text-wrap:balance}
 .hero.cover.tw .ref{color:#000!important;font-family:"Anton",sans-serif;font-weight:400;font-size:min(var(--rs),3.2vw);line-height:1;margin:var(--vgap) 0 0;color:#fff;letter-spacing:.02em}
@@ -282,6 +282,7 @@ footer p span{color:#c9840e}
 
 .story{gap:24px!important}
 .story>.g+.g,.story>.g+.wrap.wide:has(.pq.boxed),.story>.wrap.wide:has(.pq.boxed)+.g{margin-top:-18px!important}
+.story>.g figure{overflow:hidden}
 </style>
 
 </head>
@@ -307,8 +308,8 @@ footer p span{color:#c9840e}
 
   <section class="hero full cover tw">
     <div class="wrap">
-      <div class="ph"><img src="/features/lfa-235/img/hero.jpg" alt="Laura Sharpe’s Athletes Profile: LFA 235, a fighter landing a flying knee in the cage"></div>
-      <div class="side">
+      <div class="ph"><img src="/features/lfa-235/img/hero.jpg" alt="Laura Sharpe’s Athletes Profile: LFA 235, a fighter landing a flying knee in the cage" style="object-position:50% 50%;transform-origin:50% 50%;transform:translate(-66px, 0px) scale(1.05)"></div>
+      <div class="side" style="position:relative;top:17px;left:-21px">
         <p class="verse">Proud sponsors of LFA 235</p>
         <p class="ref">Louisville, Kentucky</p>
         <div class="credits"><span><b>Design</b> Per Bernal</span></div>
@@ -360,8 +361,8 @@ footer p span{color:#c9840e}
 
     <div class="wrap wide">
       <div class="pq il boxed photo" style="--ar:2000/1070">
-        <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/group.jpg" alt="Laura Sharpe with fighters, partners and supporters in the LFA cage"></span></figure>
-        <div class="q"><blockquote class="long" style="text-wrap:balance">“From spectacular finishes to remarkable displays of perseverance, every athlete who stepped into the cage embodied the courage, discipline, and determination that lie at the heart of both Artists for Trauma and Athletes for Trauma.”</blockquote></div>
+        <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/group.jpg" alt="Laura Sharpe with fighters, partners and supporters in the LFA cage" style="object-position:23% 60.5%;transform-origin:23% 60.5%;transform:translate(0px, 7px) scale(1.18);clip-path:inset(0% 3% 0% 3%)"></span></figure>
+        <div class="q" style="position:relative;top:26px;left:54px"><blockquote class="long" style="text-wrap:balance">“From spectacular finishes to remarkable displays of perseverance, every athlete who stepped into the cage embodied the courage, discipline, and determination that lie at the heart of both Artists for Trauma and Athletes for Trauma.”</blockquote></div>
       </div>
     </div>
 
@@ -373,7 +374,7 @@ footer p span{color:#c9840e}
 
     <div class="wrap wide g g2" style="grid-template-columns:minmax(0,0.748fr) minmax(0,0.772fr)">
       <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/fantes.jpg" alt="Laura Sharpe ringside at LFA 235" style="aspect-ratio:1496/2000;object-position:50% 50%"></span></figure>
-      <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/lfa.jpg" alt="Two men in LFA gear in front of the LFA logo" style="aspect-ratio:1544/2000;object-position:50% 50%"></span></figure>
+      <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/lfa.jpg" alt="Two men in LFA gear in front of the LFA logo" style="aspect-ratio:1544/2000;object-position:50% 50%;transform-origin:50% 50%;transform:translate(9px, -32px) scale(1.09)"></span></figure>
     </div>
 
     <div class="wrap col">
@@ -381,7 +382,7 @@ footer p span{color:#c9840e}
     </div>
 
     <div class="wrap wide g g2" style="grid-template-columns:minmax(0,0.68fr) minmax(0,0.6925fr)">
-      <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/nevada.jpg" alt="Laura Sharpe with Miss Nevada" style="aspect-ratio:1360/2000;object-position:50% 50%"></span></figure>
+      <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/nevada.jpg" alt="Laura Sharpe with Miss Nevada" style="aspect-ratio:1360/2000;object-position:50% 50%;transform-origin:50% 50%;transform:translate(2px, -9px) scale(1.03)"></span></figure>
       <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/holly.jpg" alt="Laura Sharpe with UFC Hall of Famer Holly Holm" style="aspect-ratio:1385/2000;object-position:50% 50%"></span></figure>
     </div>
 
@@ -396,7 +397,7 @@ footer p span{color:#c9840e}
     </div>
 
     <div class="wrap wide g g2" style="grid-template-columns:minmax(0,0.743fr) minmax(0,0.7355fr)">
-      <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/eddie.jpg" alt="LFA 235 partners on a video call" style="aspect-ratio:1486/2000;object-position:50% 50%"></span></figure>
+      <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/eddie.jpg" alt="LFA 235 partners on a video call" style="aspect-ratio:1486/2000;object-position:51% 50%;transform-origin:51% 50%;transform:translate(11px, 0px) scale(1)"></span></figure>
       <figure><span class="crop"><img loading="lazy" src="/features/lfa-235/img/ed.jpg" alt="LFA 235 partners on a video call" style="aspect-ratio:1471/2000;object-position:50% 50%"></span></figure>
     </div>
 
