@@ -13,7 +13,7 @@
 :root{
   --bg:#ffffff; --fg:#000000; --mute:#555555; --line:#d9d9d9; --soft:#f3f3ee;
   --pink:#f567af; --pink-ink:#c93683;
-  --grad:#f0a01e;--yel:#fff;
+  --grad:#f567af;--yel:#fff;
   --head:"gotham-condensed","Barlow Condensed","Arial Narrow",sans-serif;
   --sp:clamp(48px,6vw,80px);
 }
@@ -201,7 +201,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
 footer img{height:44px;width:auto;object-fit:contain}
 footer p{font-weight:700;font-size:1.15rem}
 footer p span{color:#fff;white-space:nowrap}
-footer p span{color:#d98a0c}
+footer p span{color:#c2367f}
 /* Chelsie Hill: hero shows the cover portrait; colours from the cover (taupe band, cream title page) */
 .hero.full .ph{aspect-ratio:4/5}.hero.full .ph img{transform:none;object-position:50% 100%;height:100%;width:100%;object-fit:contain}
 /* Opening box: name set like the V7 cover (Gotham via Montserrat stand-in); other lines in the site font; cover colours.
@@ -253,11 +253,11 @@ footer p span{color:#d98a0c}
 .hero.cover.tw{--txt-scale:1;--vs:3.2rem;--vlh:1.02;--vls:0em;--vgap:18px;--rs:1.5rem;--cgap:40px;--credits-size:1.25rem;--sidew:100%}
 .hero.cover.tw .side{zoom:var(--txt-scale);width:var(--sidew);display:flex;flex-direction:column;align-items:flex-start;text-align:left;color:#000}
 .hero.cover.tw .verse{font-family:"Anton",sans-serif;font-weight:400;font-size:min(var(--vs),5.2vw);line-height:var(--vlh);letter-spacing:var(--vls);margin:0;color:#fff;text-wrap:balance}
-.hero.cover.tw .ref{color:#f0a01e!important;font-family:"Anton",sans-serif;font-weight:400;font-size:min(var(--rs),3.2vw);line-height:1;margin:var(--vgap) 0 0;color:#fff;letter-spacing:.02em}
-.hero.cover.tw .credits{margin-top:var(--cgap);display:flex;flex-direction:column;gap:4px;font-size:var(--credits-size);color:#fff}.hero.cover.tw .credits b{color:#f0a01e}.hero.cover.tw .credits span{color:#fff}
+.hero.cover.tw .ref{color:#000!important;font-family:"Anton",sans-serif;font-weight:400;font-size:min(var(--rs),3.2vw);line-height:1;margin:var(--vgap) 0 0;color:#fff;letter-spacing:.02em}
+.hero.cover.tw .credits{margin-top:var(--cgap);display:flex;flex-direction:column;gap:4px;font-size:var(--credits-size);color:#fff}.hero.cover.tw .credits b{color:#000}.hero.cover.tw .credits span{color:#fff}
 @media (max-width:820px){.hero.cover.tw .wrap{grid-template-columns:1fr;padding:0 0 28px}.hero.cover.tw .side{order:0}.hero.cover.tw .side{padding:28px 24px 0;zoom:1;width:auto;top:0!important;left:0!important}.hero.cover.tw .verse{font-size:9vw}.hero.cover.tw .ref{font-size:6vw}}
-.pq.boxed cite,.big.boxq cite{color:#1b2a4a!important}
-.hero.cover.tw{background:#1b2a4a}
+.pq.boxed cite,.big.boxq cite{color:#000!important}
+.hero.cover.tw{background:#f567af}
 .story>.g figure{overflow:hidden}
 .pq.boxed blockquote,.big.boxq blockquote{color:#000!important}
 .story figcaption{font-size:.95rem;color:#555;font-weight:600;margin-top:6px}
@@ -284,6 +284,7 @@ footer p span{color:#d98a0c}
 .story{gap:24px!important}
 .story>.g+.g,.story>.g+.wrap.wide:has(.pq.boxed),.story>.wrap.wide:has(.pq.boxed)+.g{margin-top:-18px!important}
 .story>.g figure{overflow:hidden}
+.hero.cover.tw .verse,.big.boxq blockquote,.big.boxq blockquote span{font-family:"Playfair Display",Georgia,serif!important;font-weight:900!important;letter-spacing:-.035em!important;color:#000!important}.hero.cover.tw .verse{line-height:1!important}.hero.cover.tw .verse em{font-style:normal;color:#fff}.hero.cover.tw .credits span{color:#fff}.big.boxq blockquote{line-height:1.08!important}
 </style>
 
 </head>
@@ -309,9 +310,9 @@ footer p span{color:#d98a0c}
 
   <section class="hero full cover tw">
     <div class="wrap">
-      <div class="ph"><img src="/features/la-marathon/img/hero.jpg" alt="Artists for Trauma at the 2026 ASICS Los Angeles Marathon: the Los Angeles Marathon is more than a race"></div>
+      <div class="ph"><img src="/features/la-marathon/img/hero.jpg" alt="A wheelchair racer celebrating at the finish line with the Argentine flag, 2026 ASICS Los Angeles Marathon"></div>
       <div class="side">
-        <p class="verse">The Los Angeles Marathon is more than a race…</p>
+        <p class="verse">The <em>Los Angeles</em> Marathon is more than a race…</p>
         <p class="ref">Race day · Century City · March 8, 2026</p>
         <div class="credits"><span><b>Photography &amp; Design</b> Per Bernal</span></div>
       </div>
