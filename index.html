@@ -530,8 +530,8 @@ nav.main .btn{background:#f1592a !important;color:#fff !important}nav.main .btn:
 #chantel .lm-grid{grid-template-columns:1fr 1.2fr 1fr}#chantel .lm-grid img{height:clamp(300px,38vw,490px);aspect-ratio:auto}
 @media (max-width:760px){#chantel .lm-grid{grid-template-columns:1fr 1fr}#chantel .lm-grid .lm-b{grid-column:1/-1;order:-1;aspect-ratio:4/3}}
 #chantel .eyebrow,#greg .eyebrow,#isaiah .eyebrow,#quan .eyebrow,#jonathan .eyebrow,#kent .eyebrow,#oni5 .eyebrow,#lfa235 .eyebrow,#marathon .eyebrow{color:#f1592a !important}
-#greg .lm-grid{grid-template-columns:1fr 1.6fr 1fr}#greg .lm-grid img{height:clamp(260px,32vw,420px);aspect-ratio:auto}
-@media (max-width:760px){#greg .lm-grid{grid-template-columns:1fr 1fr}#greg .lm-grid .lm-b{grid-column:1/-1;order:-1}}
+#greg .lm-grid,#kent .lm-grid{grid-template-columns:1fr 1.6fr 1fr}#greg .lm-grid img,#kent .lm-grid img{height:clamp(260px,32vw,420px);aspect-ratio:auto}
+@media (max-width:760px){#greg .lm-grid,#kent .lm-grid{grid-template-columns:1fr 1fr}#greg .lm-grid .lm-b,#kent .lm-grid .lm-b{grid-column:1/-1;order:-1}}
 #chantel,#greg,#isaiah,#quan,#jonathan,#kent,#oni5,#lfa235,#marathon{border-top:1px solid #bdbdbd !important;margin-top:calc(var(--sp) * .6)}
 #chantel .lm-pull,#greg .lm-pull,#isaiah .lm-pull,#quan .lm-pull,#jonathan .lm-pull,#kent .lm-pull,#oni5 .lm-pull,#lfa235 .lm-pull,#marathon .lm-pull{border-left-color:#bdbdbd !important}
 #oni5 .lm-grid{grid-template-columns:1fr 1.3fr 1fr}#oni5 .lm-grid img{height:clamp(300px,38vw,490px);aspect-ratio:auto}
@@ -637,6 +637,16 @@ new IntersectionObserver(function(e){hd.classList.toggle('stuck',!e[0].isInterse
     </div>
   </section>
 
+  <section id="kent">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">Laura Sharpe's Athletes Profile</span><h2>Kent Seton: building connection across business, philanthropy and human potential</h2><p>Before law and philanthropy, Kent Seton was an elite tennis player, competing internationally. Today he is a lawyer, the founder of AthletesTouch and CEO &amp; Chairman of the Edward Charles Foundation.</p></div></div>
+      <div class="lm-grid">
+        <img class="lm-a" src="images/f_kent.jpg" style="object-position:50% 0%" alt="Kent Seton magazine cover">
+        <img class="lm-b" src="images/ks_room.jpg" style="object-position:50% 40%" alt="Kent Seton in his living room">
+        <img class="lm-c" src="images/ks_stairs.jpg" style="object-position:50% 30%" alt="Kent Seton sitting on a wooden staircase">
+      </div>
+    </div>
+  </section>
   <section id="oni5">
     <div class="wrap">
       <div class="head"><div><span class="eyebrow">Athletes for Trauma presents · October 10, 2026</span><h2>Damon “The Demon” Bell: from the other side of the cage</h2><p>Formerly known inside the cage as “The Demon,” Damon Bell competed in more than 30 fights across five combat sports. Now he is turning a fighter's perspective into a platform for the athletes coming next, as a coach, gym owner and promoter.</p></div></div>
