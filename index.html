@@ -968,21 +968,21 @@ function cards(target, withImg){
 }
 
 const FEATURES = [
-  ['aaron-baker','Aaron Baker','The Will to Rise','','','f_aaron'],
-  ['jonathan-floyd','Johnathan Floyd','A Rising Voice in Combat Sports','AFT exclusive interview · Beyond Fight Night','','f_jonathan'],
   ['damon-bell','Damon Bell','“The Demon”: From the Other Side of the Cage','Athletes for Trauma presents · Oni Fights 5 MMA · October 10, 2026','Hard work never betrays you.','f_damon'],
+  ['eddie-donaldson','Eddie Donaldson','Founder of GuerillaOne','Graffiti · Street Art · The Trust Agency','It’s an energy thing…','f_eddie'],
   ['chantel-navarro','Chantel Navarro','Chicanita: Sponsored by Athletes for Trauma','Professional boxer · WBC Youth World Bantamweight Champion','','f_chantel'],
+  ['aaron-baker','Aaron Baker','The Will to Rise','','','f_aaron'],
+  ['quan-b','Quan.B','Rhythm & Roots','Faith · Family · Music · Former football player','','f_quan2'],
   ['isaiah-ferguson','Isaiah Ferguson','“The Vanilla Gorilla”','ONI Fights 5 MMA · Main event · October 10, 2026','Get lean, get mean, and try to take it as far as I can.','f_isaiah2'],
+  ['jonathan-floyd','Johnathan Floyd','A Rising Voice in Combat Sports','AFT exclusive interview · Beyond Fight Night','','f_jonathan'],
   ['lfa-235','LFA 235','Proud Sponsors of LFA 235','Louisville, Kentucky · Artists for Trauma & Athletes for Trauma','','f_lfa'],
   ['carlo-kellem','Carlo Kellem','From Ringside to Regulation','The Boxing Commissioner · Oni Fights 5 MMA, Galt House Hotel, October 10, 2026','','f_carlo'],
-  ['quan-b','Quan.B','Rhythm & Roots','Faith · Family · Music · Former football player','','f_quan2'],
-  ['greg-fante','Greg Fante','The Coach of Louisville','Laura Sharpe’s Athletes Profile · October 2026','','f_greg'],
-  ['lance-george','Lance George','Building on a Legacy','The Galt House Hotel · Chief Marketing Officer','','f_lance'],
-  ['oni-fights-5','ONI Fights 5: MMA','Pictorial: The First MMA Night at the Galt House','Louisville · October 10, 2026','','f_oni'],
-  ['la-marathon','LA Marathon 2026','More Than a Race','2026 ASICS Los Angeles Marathon · Wheelchair Division & para athletes','','f_marathon'],
   ['kent-seton','Kent Seton','Building Connection Across Business, Philanthropy and Human Potential','Lawyer · Former Professional Athlete · Founder of AthletesTouch · CEO & Chairman, Edward Charles Foundation','','f_kent'],
+  ['greg-fante','Greg Fante','The Coach of Louisville','Laura Sharpe’s Athletes Profile · October 2026','','f_greg'],
   ['tommy-hollenstein','Tommy Hollenstein','Art in Motion','Phil. 4:13','','f_tommy'],
-  ['eddie-donaldson','Eddie Donaldson','Founder of GuerillaOne','Graffiti · Street Art · The Trust Agency','It’s an energy thing…','f_eddie']];
+  ['lance-george','Lance George','Building on a Legacy','The Galt House Hotel · Chief Marketing Officer','','f_lance'],
+  ['la-marathon','LA Marathon 2026','More Than a Race','2026 ASICS Los Angeles Marathon · Wheelchair Division & para athletes','','f_marathon'],
+  ['oni-fights-5','ONI Fights 5: MMA','Pictorial: The First MMA Night at the Galt House','Louisville · October 10, 2026','','f_oni']];
 const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const FULL = {'tommy-hollenstein':'https://artists-for-trauma.netlify.app/features/tommy-hollenstein/','eddie-donaldson':'https://artists-for-trauma.netlify.app/features/eddie-donaldson/','isaiah-ferguson':'/features/isaiah-ferguson/','chantel-navarro':'/features/chantel-navarro/','lfa-235':'/features/lfa-235/','jonathan-floyd':'/features/jonathan-floyd/','lance-george':'/features/lance-george/','oni-fights-5':'/features/oni-fights-5/','la-marathon':'/features/la-marathon/','aaron-baker':'https://artists-for-trauma.netlify.app/features/aaron-baker/','damon-bell':'https://artists-for-trauma.netlify.app/features/damon-bell/','carlo-kellem':'https://artists-for-trauma.netlify.app/features/carlo-kellem/','greg-fante':'https://artists-for-trauma.netlify.app/features/greg-fante/','quan-b':'https://artists-for-trauma.netlify.app/features/quan-b/','kent-seton':'https://artists-for-trauma.netlify.app/features/kent-seton/'};
 const cover = ([id,n,d,,,im]) => `<a class="fcover" data-id="${id}" href="${FULL[id]||'#feature-'+id}" aria-label="${esc(n)}: ${esc(d)}"><img src="${IMG[im]}" alt="${esc(n)} magazine cover"><span class="cap"><span><b>${esc(n)}</b><small>${esc(d)}</small></span><i>→</i></span></a>`;
